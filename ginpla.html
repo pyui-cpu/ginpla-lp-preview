@@ -8,7 +8,7 @@
   <meta property="og:description" content="ビル再生のプロ集団。古ビルの再生解決。※作業中の草案・未公開">
   <meta property="og:type" content="website">
   <meta name="robots" content="noindex,nofollow">
-  <title>銀座プランニング｜v0.40（ヒーロー拡大＋文字下地・ハンバーガー追加・物件セクション新設・ハピクス表記統一）</title>
+  <title>銀座プランニング｜v0.40（ヒーローは写真＋黒文字のみでシンプルに・ハンバーガー追加・物件セクション新設・ハピクス表記統一）</title>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -82,9 +82,8 @@
     .hero-dots button[aria-current="true"]{background:#fff;transform:scale(1.2)}
     .hero-dots button:focus-visible{outline:2px solid #fff;outline-offset:3px}
     .hero-inner{position:relative;z-index:2;max-width:560px;margin:0 auto;padding:0 26px;width:100%}
-    .hero-copy{display:inline-block;max-width:min(100%,30em);padding:22px 24px 26px;border-left:4px solid var(--red);border-radius:var(--radius);background:rgba(255,255,255,.95);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);box-shadow:0 22px 55px -26px rgba(0,0,0,.4)}
-    .hero h1{margin:0 0 var(--sp-3);font-family:"Yu Mincho","Noto Serif JP",serif;font-size:var(--fs-h1);line-height:1.34;font-weight:600;letter-spacing:.02em;color:var(--ink)}
-    .hero p.sub{margin:0 0 var(--sp-5);color:var(--sub);font-size:clamp(17px,4.8vw,22px);font-weight:500;font-family:"Yu Mincho","Noto Serif JP",serif}
+    .hero h1{margin:0 0 var(--sp-3);font-family:"Yu Mincho","Noto Serif JP",serif;font-size:var(--fs-h1);line-height:1.34;font-weight:600;letter-spacing:.02em;color:var(--ink);text-shadow:0 0 16px rgba(255,255,255,.7),0 1px 2px rgba(255,255,255,.6)}
+    .hero p.sub{margin:0 0 var(--sp-5);color:#222;font-size:clamp(17px,4.8vw,22px);font-weight:600;font-family:"Yu Mincho","Noto Serif JP",serif;text-shadow:0 0 14px rgba(255,255,255,.7),0 1px 2px rgba(255,255,255,.6)}
     .cta-group{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
     .cta{position:relative;display:inline-flex;overflow:hidden;padding:12px 22px;border-radius:var(--radius);text-decoration:none;font-size:var(--fs-button);font-weight:800;box-shadow:0 10px 20px -12px rgba(0,0,0,.5);transition:transform .2s ease}
     .cta:hover{transform:translateY(-2px)}
@@ -189,12 +188,10 @@
       <img class="hero-slide" src="assets/ginpla/hero/ginpla-hero-04-after-bright-v0.1.png" alt="再生後のビル外観" style="object-position:78% 55%">
     </div>
     <div class="hero-inner">
-      <div class="hero-copy">
-        <h1>ビル再生の<br>プロ集団。</h1>
-        <p class="sub">古ビルの再生解決。</p>
-        <div class="cta-group">
-          <a class="cta" href="#partners"><span>取引実績を見る →</span></a>
-        </div>
+      <h1>ビル再生の<br>プロ集団。</h1>
+      <p class="sub">古ビルの再生解決。</p>
+      <div class="cta-group">
+        <a class="cta" href="#partners"><span>取引実績を見る →</span></a>
       </div>
     </div>
     <div class="hero-dots">
