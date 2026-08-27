@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="銀座プランニング株式会社（ギンプラ）｜ビル再生のプロ集団。東京都中央区京橋。※作業中の草案です。">
+  <meta property="og:title" content="銀座プランニング株式会社｜GINPLA">
+  <meta property="og:description" content="ビル再生のプロ集団。古ビルの再生解決。※作業中の草案・未公開">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="noindex,nofollow">
+  <title>銀座プランニング｜v0.31（変更なし）</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "銀座プランニング株式会社",
+    "alternateName": ["ギンプラ", "GINZA PLANNING"],
+    "url": "https://ginza-planning.com/",
+    "logo": "assets/ginpla/ginpla-logo-black.png",
+    "foundingDate": "2021-09-10",
+    "telephone": "+81-3-6683-8202",
+    "faxNumber": "+81-3-6673-1835",
+    "address": {
+      "@type": "PostalAddress",
+      "postalCode": "104-0031",
+      "addressRegion": "東京都",
+      "addressLocality": "中央区",
+      "streetAddress": "京橋3-4-4 大根河岸ビル4階",
+      "addressCountry": "JP"
+    }
+  }
+  </script>
+  <style>
+    :root{
+      --bg:#fafafa;--card:#fff;--ink:#1c1c1c;--sub:#6f6f6f;--navy:#101010;--red:#c81e3a;--line:#e2e2e2;--radius:4px; /* --red は仮色。ロゴの正式赤が確認でき次第差し替え */
+      --fs-caption:11px;--fs-micro:12px;--fs-small:12.5px;--fs-button:13px;--fs-body:14px;--fs-lead:15px;--fs-h3:18px;--fs-h1:clamp(26px,6.4vw,34px);
+      --sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;--sp-6:24px;--sp-7:32px;--sp-8:40px;--sp-9:56px
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;font-size:var(--fs-body);line-height:1.75;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    a:focus-visible,.block:focus-visible,.cta:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+    .sticky-top{position:sticky;top:0;z-index:30}
+    .draft{padding:8px;background:#000;color:#fff;text-align:center;font-size:11px;letter-spacing:.04em}
+    .brand-header{display:flex;align-items:center;gap:10px;padding:14px 20px;background:rgba(255,255,255,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:box-shadow .25s ease,border-color .25s ease}
+    .sticky-top.scrolled .brand-header{box-shadow:0 10px 26px -18px rgba(0,0,0,.25);border-color:var(--line)}
+    .brand-header img{width:32px;height:32px;border-radius:0}
+    .brand-header strong{display:block;font-family:"Yu Mincho","Noto Serif JP",serif;font-size:15px;letter-spacing:.08em}
+    .brand-header small{display:block;font-size:9px;color:var(--sub);letter-spacing:.14em}
+    .header-nav{display:none}
+    .page{max-width:600px;margin:0 auto;padding:0 var(--sp-5) var(--sp-9)}
+    .hero{position:relative;overflow:hidden;width:100vw;margin-left:calc(50% - 50vw);margin-top:var(--sp-4);min-height:460px;display:flex;flex-direction:column;justify-content:center;padding:38px 0;background:linear-gradient(180deg,#1a1a1a 0%,#2b2b2b 60%,#3a3a3a 100%);color:#fff}
+    .hero-slider{position:absolute;inset:0;z-index:0}
+    .hero-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease}
+    .hero-slide.is-active{opacity:1;z-index:1}
+    @media (prefers-reduced-motion: no-preference){
+      .hero-slide.is-active{animation:hero-kenburns 6s ease-out forwards}
+      @keyframes hero-kenburns{from{transform:scale(1)}to{transform:scale(1.025)}}
+    }
+    @media (prefers-reduced-motion: reduce){.hero-slide{transition:opacity .15s linear}}
+    .hero-overlay{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(15,23,42,.6) 0%,rgba(15,23,42,.38) 30%,rgba(15,23,42,0) 60%),linear-gradient(0deg,rgba(15,23,42,.28) 0%,rgba(15,23,42,0) 32%)}
+    .hero-dots{position:absolute;left:0;right:0;bottom:16px;z-index:3;display:flex;justify-content:center;gap:10px}
+    .hero-dots button{width:9px;height:9px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.45);cursor:pointer;transition:background-color .2s ease,transform .2s ease}
+    .hero-dots button:hover{background:rgba(255,255,255,.7)}
+    .hero-dots button[aria-current="true"]{background:#fff;transform:scale(1.2)}
+    .hero-dots button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+    .hero-inner{position:relative;z-index:2;max-width:560px;margin:0 auto;padding:0 26px;width:100%}
+    .hero h1{margin:0 0 var(--sp-2);font-family:"Yu Mincho","Noto Serif JP",serif;font-size:var(--fs-h1);line-height:1.62;font-weight:500;letter-spacing:.02em}
+    .hero p.sub{margin:0 0 var(--sp-6);color:rgba(255,255,255,.72);font-size:var(--fs-lead);font-family:"Yu Mincho","Noto Serif JP",serif}
+    .cta-group{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+    .cta{position:relative;display:inline-flex;overflow:hidden;padding:12px 22px;border-radius:var(--radius);text-decoration:none;font-size:var(--fs-button);font-weight:800;box-shadow:0 10px 20px -12px rgba(0,0,0,.5);transition:transform .2s ease}
+    .cta:hover{transform:translateY(-2px)}
+    .cta span{position:relative;z-index:1;transition:color .3s ease}
+    .cta::before{content:"";position:absolute;left:0;right:100%;top:0;bottom:0;transition:right .3s ease}
+    .cta:hover::before,.cta:focus-visible::before{right:0}
+    .hero .cta,.cta-primary{color:#101010;background:#fff}
+    .hero .cta::before,.cta-primary::before{background:#101010}
+    .hero .cta:hover span,.hero .cta:focus-visible span,.cta-primary:hover span,.cta-primary:focus-visible span{color:#fff}
+    .cta-text-link{color:rgba(255,255,255,.82);font-size:var(--fs-button);font-weight:700;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.4)}
+    .cta-text-link:hover{color:#fff;text-decoration-color:#fff}
+    .section-title{display:flex;align-items:center;gap:9px;margin:var(--sp-9) 2px var(--sp-4);font-size:var(--fs-micro);font-weight:800;letter-spacing:.18em;color:var(--sub)}
+    .section-title::before{content:"";width:18px;height:2px;background:var(--red);opacity:.85}
+    .block{position:relative;display:block;margin-bottom:var(--sp-4);padding:var(--sp-7) var(--sp-7) 28px;border-radius:var(--radius);background:var(--card);border:1px solid var(--line);box-shadow:0 1px 2px rgba(0,0,0,.04),0 10px 22px -16px rgba(0,0,0,.18);transition:transform .25s ease,box-shadow .25s ease,border-color .2s ease}
+    .block:hover{transform:translateY(-3px);box-shadow:0 1px 2px rgba(0,0,0,.05),0 16px 30px -16px rgba(0,0,0,.22);border-color:var(--red)}
+    .block h3{margin:0 0 var(--sp-4);font-family:"Yu Mincho","Noto Serif JP",serif;font-size:var(--fs-h3);font-weight:500;color:var(--ink)}
+    .block p{margin:0;font-size:var(--fs-small);color:var(--sub)}
+    .block dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:9px 16px;font-size:var(--fs-small)}
+    .block dt{color:var(--sub);white-space:nowrap}
+    .block dd{margin:0}
+    .block dd.pending{padding:6px 10px;border:1px dashed var(--line);background:var(--bg);color:var(--sub);border-radius:var(--radius);display:inline-block}
+    .rep-row{display:flex;gap:18px;align-items:center;margin-bottom:var(--sp-4)}
+    .rep-row img{width:76px;height:76px;object-fit:cover;border-radius:var(--radius);box-shadow:0 0 0 4px #fff,0 0 0 5px var(--line)}
+    .rep-row h4{margin:0 0 4px;font-family:serif;font-size:16px;font-weight:500}
+    .rep-row .role{font-size:var(--fs-caption);color:var(--sub)}
+    .partners-track{overflow:hidden;border-radius:var(--radius);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+    .partners-marquee{display:flex;align-items:center;width:max-content}
+    .partners-marquee img{height:56px;width:auto;margin-right:30px}
+    .cta-block{position:relative;overflow:hidden;width:100vw;margin-left:calc(50% - 50vw);padding:var(--sp-8) 0;background:var(--ink);color:#fff}
+    .cta-block-inner{max-width:560px;margin:0 auto;padding:0 26px}
+    .cta-block h3{margin:0 0 10px;font-family:"Yu Mincho","Noto Serif JP",serif;font-size:var(--fs-h3);font-weight:500}
+    .cta-block p{margin:0 0 var(--sp-6);color:rgba(255,255,255,.68);font-size:var(--fs-small);max-width:46ch}
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px}
+    .cta-secondary{color:#fff;background:transparent;border:1px solid rgba(255,255,255,.4);box-shadow:none}
+    .cta-secondary::before{background:#fff}
+    .cta-secondary:hover,.cta-secondary:focus-visible{border-color:#fff;transform:translateY(-2px)}
+    .cta-secondary:hover span,.cta-secondary:focus-visible span{color:var(--ink)}
+    .footer{margin-top:var(--sp-9);padding-top:var(--sp-6);border-top:1px solid var(--line);font-size:var(--fs-caption);color:var(--sub)}
+    .footer nav{display:flex;flex-wrap:wrap;gap:8px 14px;margin-bottom:16px}
+    .footer nav a{padding:6px 12px;border-radius:var(--radius);background:#fff;border:1px solid var(--line);text-decoration:none;color:var(--ink);font-weight:700;transition:border-color .2s ease,transform .2s ease}
+    .footer nav a:hover{border-color:var(--ink);transform:translateY(-1px)}
+    .footer nav a.cross{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .footer .legal{margin-top:10px;color:#9a9a9a}
+    @media (prefers-reduced-motion: no-preference){
+      .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+      .reveal.in-view{opacity:1;transform:none}
+      .partners-marquee{animation:partners-scroll 30s linear infinite}
+      .partners-track:hover .partners-marquee,.partners-track:focus-within .partners-marquee{animation-play-state:paused}
+      @keyframes partners-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    }
+    @media(min-width:641px){.page{max-width:680px;padding:0 24px 84px}.hero{padding:56px 0;min-height:520px}.hero-inner{max-width:632px;padding:0 50px}.cta-block-inner{max-width:632px;padding:0 50px}}
+    @media(min-width:1024px){
+      .brand-header{justify-content:space-between;padding:16px 40px}
+      .header-nav{display:flex;gap:30px;font-size:13px;font-weight:700}
+      .header-nav a{position:relative;text-decoration:none;padding-bottom:3px}
+      .header-nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:currentColor;transition:right .25s ease}
+      .header-nav a:hover::after{right:0}
+      .header-nav a.cross{padding:6px 12px;background:var(--ink);color:#fff}
+      .header-nav a.cross::after{display:none}
+      .page{max-width:1080px;padding:0 40px 110px}
+      .hero{padding:72px 0;min-height:620px}
+      .hero-inner{max-width:1000px;padding:0 64px}
+      .hero h1{font-size:clamp(36px,4.4vw,56px)}
+      .hero p.sub{font-size:17px;max-width:560px}
+      .cta-block{padding:56px 0}
+      .cta-block-inner{max-width:1000px;padding:0 64px}
+      .partners-marquee img{height:72px;margin-right:44px}
+      .rep-row img{width:120px;height:120px}
+      .rep-row{gap:28px}
+    }
+  </style>
+</head>
+<body>
+<div class="sticky-top">
+  <div class="draft">v0.31｜変更なし（今回はhapixのピンク確定・影の除去のみ）／未公開</div>
+  <header class="brand-header"><div class="logo-wrap" style="display:flex;align-items:center;gap:10px"><img src="assets/ginpla/ginpla-logo-black.png" alt="ギンプラ ロゴ"><span><strong>銀座プランニング</strong><small>GINZA PLANNING / GINPLA</small></span></div><nav class="header-nav"><a href="#partners">取引実績</a><a href="#company">会社概要</a><a href="#rep">代表者</a><a href="#contact">お問い合わせ</a><a class="cross" href="hapix-v0.39.html">はぴくす</a></nav></header>
+</div>
+<div class="page">
+  <section class="hero">
+    <div class="hero-slider">
+      <img class="hero-slide is-active" src="assets/ginpla/hero/ginpla-hero-01-before-bright-v0.1.png" alt="再生前の既存ビル外観" style="object-position:78% 55%">
+      <img class="hero-slide" src="assets/ginpla/hero/ginpla-hero-02-planning-bright-v0.1.png" alt="企画・設計の打ち合わせ風景" style="object-position:66% 42%">
+      <img class="hero-slide" src="assets/ginpla/hero/ginpla-hero-03-renovation-bright-v0.1.png" alt="再生工事中のビル外観" style="object-position:70% 60%">
+      <img class="hero-slide" src="assets/ginpla/hero/ginpla-hero-04-after-bright-v0.1.png" alt="再生後のビル外観" style="object-position:78% 55%">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <h1>ビル再生のプロ集団。</h1>
+      <p class="sub">古ビルの再生解決。</p>
+      <div class="cta-group">
+        <a class="cta" href="#partners"><span>取引実績を見る →</span></a>
+        <a class="cta-text-link" href="https://ginza-planning.com/%e3%81%8a%e5%95%8f%e3%81%84%e5%90%88%e3%82%8f%e3%81%9b/" target="_blank" rel="noopener">お問い合わせはこちら →</a>
+      </div>
+    </div>
+    <div class="hero-dots">
+      <button type="button" data-index="0" aria-current="true" aria-label="1枚目: 再生前の既存ビルを表示"></button>
+      <button type="button" data-index="1" aria-current="false" aria-label="2枚目: 企画・設計の様子を表示"></button>
+      <button type="button" data-index="2" aria-current="false" aria-label="3枚目: 再生工事の様子を表示"></button>
+      <button type="button" data-index="3" aria-current="false" aria-label="4枚目: 再生後のビルを表示"></button>
+    </div>
+  </section>
+
+  <h2 class="section-title" id="partners">TRACK RECORD</h2>
+  <div class="block reveal">
+    <h3>不動産大手各社との取引実績</h3>
+    <div class="partners-track"><div class="partners-marquee">
+      <img src="assets/ginpla/partner-01-tokyu-livable.png" alt="東急リバブル">
+      <img src="assets/ginpla/partner-02-openhouse.png" alt="OPEN HOUSE">
+      <img src="assets/ginpla/partner-03-mitsui-realty.png" alt="三井不動産リアルティ">
+      <img src="assets/ginpla/partner-04-sumitomo.png" alt="住友不動産">
+      <img src="assets/ginpla/partner-05-nomura.png" alt="野村不動産ソリューションズ">
+      <img src="assets/ginpla/partner-06-mizuho.png" alt="みずほ不動産販売">
+      <img src="assets/ginpla/partner-07-landnet.png" alt="LANDNET">
+      <img src="assets/ginpla/partner-08-starts.png" alt="スターツピタットハウス">
+      <img src="assets/ginpla/partner-09-century21.png" alt="CENTURY21">
+      <img src="assets/ginpla/partner-01-tokyu-livable.png" alt="" aria-hidden="true">
+      <img src="assets/ginpla/partner-02-openhouse.png" alt="" aria-hidden="true">
+      <img src="assets/ginpla/partner-03-mitsui-realty.png" alt="" aria-hidden="true">
+      <img src="assets/ginpla/partner-04-sumitomo.png" alt="" aria-hidden="true">
+      <img src="assets/ginpla/partner-05-nomura.png" alt="" aria-hidden="true">
+      <img src="assets/ginpla/partner-06-mizuho.png" alt="" aria-hidden="true">
+      <img src="assets/ginpla/partner-07-landnet.png" alt="" aria-hidden="true">
+      <img src="assets/ginpla/partner-08-starts.png" alt="" aria-hidden="true">
+      <img src="assets/ginpla/partner-09-century21.png" alt="" aria-hidden="true">
+    </div></div>
+    <p style="margin-top:12px">現行サイト（ginza-planning.com）掲載の取引先一覧を1社ずつ切り出し、流れるように表示しています。個別の取引内容・件数・期間は要確認のため未記載です。</p>
+  </div>
+
+  <h2 class="section-title" id="company">COMPANY</h2>
+  <div class="block reveal">
+    <h3>会社概要</h3>
+    <dl>
+      <dt>商号</dt><dd>銀座プランニング株式会社（GINZA PLANNING）</dd>
+      <dt>所在地</dt><dd>〒104-0031 東京都中央区京橋3-4-4 大根河岸ビル4階</dd>
+      <dt>設立・資本金</dt><dd>2021年9月10日設立／資本金 1,000万円</dd>
+      <dt>連絡先</dt><dd>TEL 03-6683-8202／FAX 03-6673-1835</dd>
+      <dt>宅地建物取引業免許番号</dt><dd class="pending">確認中（宅建業法により必須表示のため、番号確定後にこの枠へ追記します）</dd>
+      <dt>取引金融機関</dt><dd>三菱UFJ銀行 京橋支店、三井住友信託銀行 日本橋営業部 他</dd>
+    </dl>
+  </div>
+
+  <h2 class="section-title" id="rep">REPRESENTATIVE</h2>
+  <div class="block reveal">
+    <div class="rep-row"><img src="assets/ginpla/wada-profile.png" alt="代表者（現行サイト掲載写真）"><div><h4>和田真樹</h4><div class="role">代表者肩書きは要確認</div></div></div>
+    <p>代表者からのメッセージは、撮影内容・本人確認後に正式な文章へ差し替えます。写真は現行サイト（ginza-planning.com）掲載のものを使用しています。</p>
+  </div>
+
+  <h2 class="section-title" id="contact">CONTACT</h2>
+  <div class="cta-block reveal"><div class="cta-block-inner">
+    <h3>物件のご相談、まずはお気軽に。</h3>
+    <p>売買・再生のご相談はもちろん、些細な質問でも構いません。まとまった内容はお問い合わせフォームから、気軽な質問は公式LINEからもご連絡いただけます。</p>
+    <div class="cta-row">
+      <a class="cta cta-primary" href="https://ginza-planning.com/%e3%81%8a%e5%95%8f%e3%81%84%e5%90%88%e3%82%8f%e3%81%9b/" target="_blank" rel="noopener"><span>お問い合わせ →</span></a>
+      <a class="cta cta-secondary" href="https://page.line.me/199jpqpa?openQrModal=true" target="_blank" rel="noopener"><span>公式LINEで相談 →</span></a>
+    </div>
+  </div></div>
+
+  <footer class="footer">
+    <nav>
+      <a href="#">初めての方向け情報</a><a href="https://page.line.me/199jpqpa?openQrModal=true" target="_blank" rel="noopener">公式LINE</a><a href="https://lit.link/wadaemon" target="_blank" rel="noopener">リットリンク</a><a href="https://ginza-planning.com/%e3%81%8a%e5%95%8f%e3%81%84%e5%90%88%e3%82%8f%e3%81%9b/" target="_blank" rel="noopener">お問い合わせ</a><a href="#">イベント</a><a href="https://ginza-planning.com/%e6%b1%82%e4%ba%ba/" target="_blank" rel="noopener">求人</a><a href="https://ginza-planning.com/business/real-estate-academy/" target="_blank" rel="noopener">アカデミー</a>
+      <a class="cross" href="hapix-v0.39.html">はぴくす →</a>
+    </nav>
+    〒104-0031 東京都中央区京橋3-4-4 大根河岸ビル4階　TEL 03-6683-8202　FAX 03-6673-1835（現行サイト会社概要ページで確認済み）。代表者：和田真樹（肩書きは要確認）。宅地建物取引業免許番号：確認中（確定次第追記）
+    <div class="legal">© 銀座プランニング株式会社　本ページは社内検討用の草案です。公開・外部共有はしていません。</div>
+  </footer>
+</div>
+<script>
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(function(el){ el.classList.add('in-view'); }); }
+    else {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting) { entry.target.classList.add('in-view'); io.unobserve(entry.target); }
+        });
+      }, {threshold:.15, rootMargin:'0px 0px -8% 0px'});
+      els.forEach(function(el){ io.observe(el); });
+    }
+    var stickyTop = document.querySelector('.sticky-top');
+    var onScroll = function(){ stickyTop.classList.toggle('scrolled', window.scrollY > 8); };
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  })();
+  (function(){
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.hero-slide'));
+    var dots = Array.prototype.slice.call(document.querySelectorAll('.hero-dots button'));
+    if (!slides.length || !dots.length) return;
+    var current = 0;
+    var timer = null;
+    var INTERVAL = 6000;
+
+    function goTo(index){
+      if (index === current) return;
+      slides[current].classList.remove('is-active');
+      dots[current].setAttribute('aria-current', 'false');
+      current = index;
+      slides[current].classList.add('is-active');
+      dots[current].setAttribute('aria-current', 'true');
+    }
+    function next(){ goTo((current + 1) % slides.length); }
+    function stop(){ if (timer) { clearInterval(timer); timer = null; } }
+    function start(){ stop(); timer = setInterval(next, INTERVAL); }
+
+    dots.forEach(function(dot, i){
+      dot.addEventListener('click', function(){ goTo(i); start(); });
+    });
+    document.addEventListener('visibilitychange', function(){
+      if (document.hidden) { stop(); } else { start(); }
+    });
+    if (!document.hidden) start();
+  })();
+</script>
+</body>
+</html>

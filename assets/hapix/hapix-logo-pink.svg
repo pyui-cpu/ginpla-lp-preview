@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <title>はぴくす ロゴ（再現版・仮）</title>
+  <rect width="512" height="512" fill="#e5116b"/>
+  <g fill="#ffffff" font-family="'Hiragino Kaku Gothic ProN','Hiragino Sans','Yu Gothic',sans-serif" font-weight="900" text-anchor="middle">
+    <text x="146" y="228" font-size="190">は</text>
+    <text x="366" y="228" font-size="190">ぴ</text>
+    <text x="146" y="440" font-size="190">く</text>
+    <text x="366" y="440" font-size="190">す</text>
+  </g>
+</svg>

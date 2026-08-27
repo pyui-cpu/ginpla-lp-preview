@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="はぴくす｜不動産を通じて人生をハッピーに。動画・学び・イベントの入口を紹介します。※作業中の草案です。">
+  <meta property="og:title" content="はぴくす｜HAPICUS">
+  <meta property="og:description" content="不動産を通じて人生をハッピーに。※作業中の草案・未公開">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/hapix/hero/hapix-hero-01-thanks-form-v0.1.jpg">
+  <meta name="robots" content="noindex,nofollow">
+  <title>はぴくす｜v0.39（カード内padding不具合を修正）</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "はぴくす",
+    "alternateName": "HAPICUS",
+    "logo": "assets/hapix/hapix-logo-pink.svg",
+    "description": "不動産を通じて人生をハッピーにする活動・発信（正式な説明文は確認後に更新予定）"
+  }
+  </script>
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+  <style>
+    :root{
+      --bg:#fff;--card:#fff;--ink:#1a1a1a;--sub:#595959;
+      --navy:#003567;--brand-blue:#00a0e9;--brand-pink:#e5116b;
+      --line:#d9f2fc;--bg-cyan:#eaf7fd;--radius:4px;
+      --shadow:0 1px 2px rgba(26,26,26,.05),0 8px 18px -14px rgba(26,26,26,.2);
+      --fs-caption:12.5px;--fs-micro:12px;--fs-small:14.5px;--fs-button:14px;--fs-body:15.5px;--fs-lead:16px;--fs-h2:22px;--fs-h3:20px;
+      --sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;--sp-6:24px;--sp-7:32px;--sp-8:40px;--sp-9:56px
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;font-size:var(--fs-body);line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    a:focus-visible,.block:focus-visible,.cta:focus-visible,.channel-row:focus-visible,.menu-toggle:focus-visible{outline:2px solid var(--brand-blue);outline-offset:3px}
+    .draft{padding:6px;background:#242424;color:#fff;text-align:center;font-size:12px;letter-spacing:.04em}
+    .brand-header{position:sticky;top:0;z-index:41;display:flex;align-items:center;gap:10px;padding:12px 16px;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:box-shadow .25s ease}
+    .brand-header.scrolled{box-shadow:0 10px 26px -18px rgba(26,26,26,.22)}
+    .brand-header img{width:32px;height:32px;border-radius:0}
+    .header-nav{display:none}
+    .menu-toggle{position:relative;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;margin-left:auto;padding:0;border:0;background:none;cursor:pointer}
+    .menu-toggle-bar,.menu-toggle-bar::before,.menu-toggle-bar::after{position:absolute;top:50%;left:50%;width:20px;height:2px;margin:-1px 0 0 -10px;border-radius:2px;background:var(--ink);transition:transform .25s ease,opacity .2s ease}
+    .menu-toggle-bar::before,.menu-toggle-bar::after{content:""}
+    .menu-toggle-bar::before{transform:translateY(-6px)}
+    .menu-toggle-bar::after{transform:translateY(6px)}
+    .menu-toggle[aria-expanded="true"] .menu-toggle-bar{background:transparent}
+    .menu-toggle[aria-expanded="true"] .menu-toggle-bar::before{transform:rotate(45deg)}
+    .menu-toggle[aria-expanded="true"] .menu-toggle-bar::after{transform:rotate(-45deg)}
+    .nav-backdrop{position:fixed;inset:0;z-index:39;background:rgba(26,26,26,.35);opacity:0;visibility:hidden;transition:opacity .25s ease,visibility 0s linear .25s}
+    .nav-backdrop.open{opacity:1;visibility:visible;transition:opacity .25s ease,visibility 0s linear 0s}
+    .mobile-nav{display:flex;flex-direction:column;position:fixed;left:0;right:0;top:0;z-index:40;background:rgba(255,255,255,.86);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 14px 30px -12px rgba(26,26,26,.2);padding:92px var(--sp-5) var(--sp-6);transform:translateY(-100%);opacity:0;visibility:hidden;transition:transform .55s cubic-bezier(.16,.84,.24,1),opacity .45s ease,visibility 0s linear .55s}
+    .mobile-nav.open{transform:translateY(0);opacity:1;visibility:visible;transition:transform .55s cubic-bezier(.16,.84,.24,1),opacity .45s ease,visibility 0s linear 0s}
+    .mobile-nav a{padding:14px 4px;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+    .mobile-nav a:last-child{border-bottom:0}
+    @media (prefers-reduced-motion: reduce){.mobile-nav,.nav-backdrop{transition:none}}
+    .page{max-width:600px;margin:0 auto;padding:0 var(--sp-5) var(--sp-9)}
+    .hero{position:relative;padding:8px 0 0;background:#fff;color:var(--ink)}
+    .hero-inner{position:relative;width:100%}
+    .hero h1{margin:0 0 var(--sp-3);font-size:clamp(30px,8.5vw,40px);line-height:1.28;font-weight:800;letter-spacing:-.02em}
+    .hero h1 .accent{color:var(--brand-pink)}
+    .hero p.sub{margin:0 0 var(--sp-6);color:rgba(26,26,26,.82);font-size:clamp(19px,5.6vw,25px);font-weight:800;letter-spacing:-.01em}
+    .hero-slider{position:relative;width:100vw;margin-left:calc(50% - 50vw);margin-top:var(--sp-6);aspect-ratio:4/3;overflow:hidden}
+    .hero-slide{display:block;width:100%;height:100%;object-fit:cover}
+    @media (prefers-reduced-motion: no-preference){
+      .hero-slide{animation:hero-kenburns 8s ease-out forwards}
+      @keyframes hero-kenburns{from{transform:scale(1)}to{transform:scale(1.04)}}
+    }
+    .cta{position:relative;display:inline-flex;overflow:hidden;padding:12px 22px;border-radius:var(--radius);text-decoration:none;font-size:var(--fs-button);font-weight:800}
+    .cta span{position:relative;z-index:1}
+    .hero .cta{color:#fff;background:var(--brand-pink);padding:14px 28px;letter-spacing:.02em}
+    .hero .cta span{transition:color .3s ease}
+    .hero .cta::before{content:"";position:absolute;left:0;right:100%;top:0;bottom:0;background:var(--navy);transition:right .3s ease}
+    .hero .cta:focus-visible::before{right:0}
+    @media (hover:hover) and (pointer:fine){
+      .cta:hover{transform:translateY(-2px)}
+      .hero .cta:hover::before{right:0}
+    }
+    .section-head{margin:var(--sp-9) 2px var(--sp-4)}
+    .eyebrow{display:flex;align-items:center;gap:9px;margin:0 0 4px;font-size:var(--fs-micro);font-weight:800;letter-spacing:.16em;color:var(--sub)}
+    .eyebrow::before{content:"";width:18px;height:2px;background:var(--brand-pink);opacity:.75}
+    .section-head h2{margin:0;font-size:var(--fs-h2);font-weight:800;color:var(--ink);letter-spacing:-.01em}
+    .section-head p{margin:6px 0 0;font-size:var(--fs-small);color:var(--sub)}
+    .block{position:relative;display:block;overflow:hidden;margin-bottom:var(--sp-4);border-radius:var(--radius);background:var(--card);border:1px solid var(--line);text-decoration:none;box-shadow:var(--shadow);transition:border-color .2s ease,transform .2s ease}
+    .block:focus-visible{transform:translateY(-3px)}
+    .block .thumb{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;transition:transform .35s ease}
+    .block-body{display:block;padding:var(--sp-8) var(--sp-8) var(--sp-8)}
+    .block h3{margin:0 0 8px;font-size:var(--fs-h3);color:var(--navy);line-height:1.4}
+    .block p{margin:0 0 var(--sp-7);font-size:var(--fs-small);color:var(--sub);line-height:1.8}
+    .block .arrow{display:inline-flex;align-items:center;gap:6px;padding:11px 18px;border-radius:var(--radius);background:var(--brand-pink);color:#fff;font-size:14px;font-weight:800;text-decoration:none}
+    .block .arrow i{display:inline-block;font-style:normal;font-size:15px;transition:transform .2s ease}
+    @media (hover:hover) and (pointer:fine){
+      .block:hover{transform:translateY(-3px)}
+      .block:hover .thumb{transform:scale(1.03)}
+      .block:hover .arrow i{transform:translateX(3px)}
+    }
+    .block:focus-visible .thumb{transform:scale(1.03)}
+    .block:focus-visible .arrow i{transform:translateX(3px)}
+    .channel-section{position:relative;width:100vw;margin-left:calc(50% - 50vw);margin-top:var(--sp-9);background:var(--bg-cyan)}
+    .channel-section-inner{max-width:600px;margin:0 auto;padding:var(--sp-7) var(--sp-5) var(--sp-8)}
+    .channel-section .section-head{margin-top:0}
+    .channel-list{display:block}
+    .channel-row{position:relative;display:block;overflow:hidden;margin-bottom:10px;border-radius:var(--radius);background:#fff;border:1px solid var(--line);text-decoration:none;box-shadow:var(--shadow);transition:border-color .2s ease,transform .2s ease}
+    .channel-row:focus-visible{border-color:var(--brand-blue);transform:translateY(-3px)}
+    .channel-banner{display:block;width:100%;height:auto;aspect-ratio:1707/282;object-fit:cover;transition:transform .35s ease}
+    @media (hover:hover) and (pointer:fine){
+      .channel-row:hover{border-color:var(--brand-blue);transform:translateY(-3px)}
+      .channel-row:hover .channel-banner{transform:scale(1.03)}
+      .channel-row:hover .go{transform:scale(1.08)}
+    }
+    .channel-row:focus-visible .channel-banner{transform:scale(1.03)}
+    .channel-row:focus-visible .go{transform:scale(1.08)}
+    .channel-row .temp-badge{position:absolute;top:10px;right:10px;z-index:2;padding:3px 9px;border-radius:99px;background:rgba(26,26,26,.72);color:#fff;font-size:11px;font-weight:700;letter-spacing:.04em}
+    .channel-row-body{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 18px}
+    .channel-row strong{display:block;font-size:var(--fs-body);color:var(--navy)}
+    .channel-row-body span{font-size:var(--fs-caption);color:var(--sub)}
+    .channel-row .go{flex:none;width:32px;height:32px;display:grid;place-items:center;border-radius:var(--radius);background:#ff0000;color:#fff;font-size:13px;transition:transform .25s ease}
+    .section-cta{margin:var(--sp-9) 0 0;text-align:center}
+    .section-cta .cta{background:var(--navy);color:#fff}
+    .footer{margin-top:var(--sp-9);padding-top:var(--sp-6);border-top:1px solid var(--line);font-size:var(--fs-caption);color:var(--sub)}
+    .footer nav{display:flex;flex-wrap:wrap;gap:8px 14px;margin-bottom:16px}
+    .footer nav a{position:relative;overflow:hidden;display:inline-block;padding:6px 12px;border-radius:var(--radius);background:#fff;border:1px solid var(--line);text-decoration:none;color:var(--ink);font-weight:700;transition:border-color .2s ease,transform .2s ease}
+    .footer nav a span{position:relative;z-index:1;transition:color .3s ease}
+    .footer nav a::before{content:"";position:absolute;left:0;right:100%;top:0;bottom:0;background:var(--brand-blue);transition:right .3s ease}
+    .footer nav a:focus-visible{border-color:var(--brand-blue);transform:translateY(-1px)}
+    .footer nav a:focus-visible::before{right:0}
+    .footer nav a:focus-visible span{color:#fff}
+    @media (hover:hover) and (pointer:fine){
+      .footer nav a:hover{border-color:var(--brand-blue);transform:translateY(-1px)}
+      .footer nav a:hover::before{right:0}
+      .footer nav a:hover span{color:#fff}
+    }
+    .footer nav .pending{display:inline-block;padding:6px 12px;border-radius:var(--radius);background:#f5f5f5;border:1px dashed #c9c9c9;color:#8a8a8a;font-weight:700;cursor:not-allowed}
+    .footer dl{margin:0 0 14px;font-size:var(--fs-caption)}
+    .footer dt{font-weight:700;color:var(--ink);display:inline}
+    .footer dd{margin:0 0 6px;display:inline}
+    .footer dd::after{content:"";display:block}
+    .footer .legal{margin-top:10px;color:#595959}
+    .reveal{opacity:1}
+    .block,.channel-row,.section-cta{transition-property:border-color,transform;transition-duration:.2s,.2s;transition-timing-function:ease,ease}
+    @media (prefers-reduced-motion: no-preference){
+      .reveal{opacity:0;transform:translateY(14px)}
+      .reveal.in-view{opacity:1;transform:none}
+      .block.reveal,.channel-row.reveal,.section-cta.reveal{transition-property:opacity,transform,border-color;transition-duration:.5s,.5s,.2s;transition-timing-function:cubic-bezier(.34,1.56,.64,1),cubic-bezier(.34,1.56,.64,1),ease}
+      #content .block:nth-of-type(2),.channel-list .channel-row:nth-of-type(2){transition-delay:.08s,.08s,0s}
+      .block:hover,.block:focus-visible,.channel-row:hover,.channel-row:focus-visible{transition-delay:0s}
+    }
+    @media(min-width:641px){
+      .page{max-width:680px;padding:0 24px 84px}
+      .channel-section-inner{max-width:680px;padding:var(--sp-7) 24px var(--sp-8)}
+      .hero{position:relative;overflow:hidden;width:100vw;margin-left:calc(50% - 50vw);min-height:480px;display:flex;flex-direction:column;justify-content:center;padding:56px 0}
+      .hero-inner{position:relative;z-index:2;max-width:460px;margin:-2px 0 0;padding:0 0 0 56px}
+      .hero-slider{position:absolute;top:0;left:auto;right:0;bottom:0;width:44%;margin:0;aspect-ratio:auto;z-index:0;overflow:hidden}
+      .hero-slider::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,0) 42%)}
+    }
+    @media(min-width:1024px){
+      .brand-header{justify-content:space-between;padding:16px 40px}
+      .header-nav{display:flex;gap:30px;font-size:13px;font-weight:700}
+      .menu-toggle,.mobile-nav,.nav-backdrop{display:none}
+      .header-nav a{position:relative;text-decoration:none;padding-bottom:3px}
+      .header-nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:currentColor;transition:right .25s ease}
+      .header-nav a:hover::after,.header-nav a:focus-visible::after{right:0}
+      .page{max-width:1080px;padding:0 40px 110px}
+      .channel-section-inner{max-width:1080px;padding:var(--sp-8) 40px}
+      .hero{padding:88px 0;min-height:620px}
+      .hero-inner{max-width:760px;padding:0 0 0 72px;margin-top:-2px}
+      .hero h1{font-size:clamp(44px,5.6vw,72px);line-height:1.1;letter-spacing:-.03em}
+      .hero p.sub{font-size:clamp(28px,3vw,38px);max-width:520px}
+      #content{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+      #content .block{margin-bottom:0}
+      .channel-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+      .channel-list .channel-row{margin-bottom:0}
+    }
+  </style>
+</head>
+<body>
+<div class="draft">v0.39｜社内検討用・未公開</div>
+<header class="brand-header" id="siteHeader"><div class="logo-wrap" style="display:flex;align-items:center;gap:10px"><img src="assets/hapix/hapix-logo-pink.svg" alt="はぴくす ロゴ"></div><nav class="header-nav"><a href="#content">コンテンツ</a><a href="#channel">チャンネル</a><a href="https://ginza-planning.com/%e3%81%8a%e5%95%8f%e3%81%84%e5%90%88%e3%82%8f%e3%81%9b/" target="_blank" rel="noopener">お問い合わせ</a></nav><button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="メニューを開く"><span class="menu-toggle-bar"></span></button></header>
+<div class="nav-backdrop" id="navBackdrop"></div>
+<nav class="mobile-nav" id="mobileNav" aria-label="モバイルメニュー">
+  <a href="#content">コンテンツ</a>
+  <a href="#channel">チャンネル</a>
+  <a href="https://ginza-planning.com/%e3%81%8a%e5%95%8f%e3%81%84%e5%90%88%e3%82%8f%e3%81%9b/" target="_blank" rel="noopener">お問い合わせ</a>
+</nav>
+<div class="page">
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>不動産で人生を<br><span class="accent">ハッピー</span>に。</h1>
+      <p class="sub">楽しく働いて成果を出す</p>
+      <a class="cta" href="#content"><span>読む・見る →</span></a>
+    </div>
+    <div class="hero-slider">
+      <img class="hero-slide" src="assets/hapix/hero/04-hero-mobile-no-people-4x5-v0.1.png" alt="青空と住宅街、遠くのビル群を見渡す写真" width="1600" height="2000" style="object-position:50% 50%">
+    </div>
+  </section>
+
+  <div class="section-head">
+    <p class="eyebrow">CONTENT</p>
+    <h2>おすすめコンテンツ</h2>
+    <p>不動産をもっと身近にする、はぴくすの発信です。</p>
+  </div>
+  <div id="content">
+    <a class="block reveal" href="https://youtube.com/channel/UCMkjvw7xnyM78xNOBZPiEwg" target="_blank" rel="noopener"><img class="thumb" src="assets/hapix/content/05-content-toriyama-no-people-16x9-v0.1.png" alt="間取り図と右肩上がりのグラフのイラスト" width="1920" height="1080" loading="lazy"><span class="block-body"><h3>不動産で資産を増やす方法</h3><p>初心者にもわかりやすく、資産形成の考え方を紹介します。</p><span class="arrow">大家さん必見 <i>→</i></span></span></a>
+    <a class="block reveal" href="https://www.youtube.com/@wadafudousanTV" target="_blank" rel="noopener"><img class="thumb" src="assets/hapix/content/06-content-hapix-no-people-16x9-v0.1.png" alt="都会のビル群を描いたイラスト" width="1920" height="1080" loading="lazy"><span class="block-body"><h3>不動産業界で楽しく成功する方法</h3><p>現場のリアルと、楽しみながら成果を出す働き方を伝えます。</p><span class="arrow">業界人必見 <i>→</i></span></span></a>
+  </div>
+
+  <section class="channel-section" id="channel">
+    <div class="channel-section-inner">
+      <div class="section-head">
+        <p class="eyebrow">CHANNEL</p>
+        <h2>公式チャンネル</h2>
+        <p>チャンネル登録して、最新の発信をチェック。</p>
+      </div>
+      <div class="channel-list">
+        <a class="channel-row reveal" href="https://youtube.com/channel/UCMkjvw7xnyM78xNOBZPiEwg" target="_blank" rel="noopener"><img class="channel-banner" src="assets/hapix/channel/toriyama-banner.jpg" alt="とりやま大家チャンネル バナー" loading="lazy"><span class="channel-row-body"><span><strong>とりやま大家チャンネル</strong><span>チャンネル登録はこちら</span></span><span class="go">▶</span></span></a>
+        <a class="channel-row reveal" href="https://www.youtube.com/@wadafudousanTV" target="_blank" rel="noopener"><span class="temp-badge">仮画像</span><img class="channel-banner" src="assets/hapix/channel/wadaemon-banner-temp.jpg" alt="はぴくす不動産チャンネル バナー（仮：ワダエモンチャンネルのバナーを一時使用）" loading="lazy"><span class="channel-row-body"><span><strong>はぴくす不動産チャンネル</strong><span>チャンネル登録はこちら</span></span><span class="go">▶</span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-cta reveal">
+    <a class="cta" href="https://ginza-planning.com/%e3%81%8a%e5%95%8f%e3%81%84%e5%90%88%e3%82%8f%e3%81%9b/" target="_blank" rel="noopener"><span>お問い合わせはこちら →</span></a>
+  </div>
+
+  <footer class="footer" id="contact">
+    <nav>
+      <span class="pending" aria-disabled="true">イベント（準備中）</span>
+      <a href="https://ginza-planning.com/%e6%b1%82%e4%ba%ba/" target="_blank" rel="noopener"><span>求人</span></a>
+      <a href="https://ginza-planning.com/business/real-estate-academy/" target="_blank" rel="noopener"><span>アカデミー</span></a>
+      <a href="https://ginza-planning.com/%e3%81%8a%e5%95%8f%e3%81%84%e5%90%88%e3%82%8f%e3%81%9b/" target="_blank" rel="noopener"><span>お問い合わせ</span></a>
+    </nav>
+    <dl>
+      <dt>運営元</dt><dd>要確認（正式な運営会社名・銀座プランニングとの関係を掲載）</dd>
+      <dt>お問い合わせ窓口</dt><dd>要確認（返信目安・受付時間を明記）</dd>
+    </dl>
+    © はぴくす（仮）｜運営会社・所在地・連絡先・法的表記は要確認
+    <div class="legal">本ページは社内検討用の草案です。公開・外部共有はしていません。</div>
+  </footer>
+</div>
+<script>
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(function(el){ el.classList.add('in-view'); }); }
+    else {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting) { entry.target.classList.add('in-view'); io.unobserve(entry.target); }
+        });
+      }, {threshold:.15, rootMargin:'0px 0px -8% 0px'});
+      els.forEach(function(el){ io.observe(el); });
+    }
+    var header = document.getElementById('siteHeader');
+    var onScroll = function(){ header.classList.toggle('scrolled', window.scrollY > 8); };
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+
+    var menuToggle = document.getElementById('menuToggle');
+    var mobileNav = document.getElementById('mobileNav');
+    var navBackdrop = document.getElementById('navBackdrop');
+    function openMenu(){
+      mobileNav.classList.add('open');
+      navBackdrop.classList.add('open');
+      menuToggle.setAttribute('aria-expanded','true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu(){
+      mobileNav.classList.remove('open');
+      navBackdrop.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+    }
+    menuToggle.addEventListener('click', function(){
+      var isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+      if (isOpen) { closeMenu(); } else { openMenu(); }
+    });
+    navBackdrop.addEventListener('click', closeMenu);
+    mobileNav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeMenu(); });
+  })();
+</script>
+</body>
+</html>
