@@ -4,13 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
-  <title>LP案2｜v0.39（カード内padding不具合を修正）</title>
+  <title>LP案2｜v0.40（ギンプラ大幅更新／ハピクス表記統一）</title>
   <style>
-    *{box-sizing:border-box}body{margin:0;background:#f0f2f4;color:#173047;font-family:"Hiragino Sans","Yu Gothic",sans-serif}.wrap{width:min(1100px,calc(100% - 36px));margin:auto;padding:64px 0}.label{font-size:12px;font-weight:800;letter-spacing:.14em;color:#111}h1{font-size:clamp(38px,7vw,72px);line-height:1.1;letter-spacing:-.05em;margin:10px 0 18px}p{color:#64748b;line-height:1.8}.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:42px}.card{display:flex;flex-direction:column;min-height:470px;padding:38px;border-radius:24px;text-decoration:none;box-shadow:0 24px 70px rgba(18,43,64,.12);transition:.2s}.card:hover{transform:translateY(-4px)}.card h2{font-size:32px;margin:auto 0 10px}.card strong{margin-top:30px}.old{color:#1b2a4e;background:#f5efe0;border-top:10px solid #1b2a4e}.mono{color:#fff;background:linear-gradient(150deg,#050505,#4d4d4d)}.mono p{color:rgba(255,255,255,.72)}.tag{display:inline-flex;align-self:flex-start;padding:6px 11px;border-radius:99px;background:rgba(255,255,255,.9);color:#173047;font-size:11px;font-weight:800}@media(max-width:720px){.grid{grid-template-columns:1fr}.card{min-height:390px}}
+    *{box-sizing:border-box}body{margin:0;background:#f0f2f4;color:#173047;font-family:"Hiragino Sans","Yu Gothic",sans-serif}.wrap{width:min(1100px,calc(100% - 36px));margin:auto;padding:64px 0}.label{font-size:12px;font-weight:800;letter-spacing:.14em;color:#111}h1{font-size:clamp(38px,7vw,72px);line-height:1.1;letter-spacing:-.05em;margin:10px 0 18px}p{color:#64748b;line-height:1.8}ul{color:#64748b;line-height:1.9;padding-left:1.2em}.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:42px}.card{display:flex;flex-direction:column;min-height:470px;padding:38px;border-radius:24px;text-decoration:none;box-shadow:0 24px 70px rgba(18,43,64,.12);transition:.2s}.card:hover{transform:translateY(-4px)}.card h2{font-size:32px;margin:auto 0 10px}.card strong{margin-top:30px}.old{color:#1b2a4e;background:#f5efe0;border-top:10px solid #1b2a4e}.mono{color:#fff;background:linear-gradient(150deg,#050505,#4d4d4d)}.mono p{color:rgba(255,255,255,.72)}.tag{display:inline-flex;align-self:flex-start;padding:6px 11px;border-radius:99px;background:rgba(255,255,255,.9);color:#173047;font-size:11px;font-weight:800}@media(max-width:720px){.grid{grid-template-columns:1fr}.card{min-height:390px}}
   </style>
 </head>
-<body><main class="wrap"><div class="label">DIRECTION 22 → v0.39（カード内padding不具合を修正）</div><h1>カード内側の余白、<br>根本原因を修正</h1><p>CONTENTカードの右側だけ余白が無かった本当の原因が判明：テキストを囲んでいた.block-bodyが&lt;span&gt;（display:inlineがデフォルト）のままで、paddingを指定しても中のh3/pの幅を正しく制約できていなかった（左は inline の開始位置がずれて見えるだけ、右は幅が親いっぱいまで伸びて余白ゼロ）。display:blockを明示して解決、実測で左右とも41pxの均等な余白を確認。あわせて「（内容は撮影後に確定）」の文言も削除しました。ギンプラ側は変更していません。</p><div class="grid">
-  <a class="card old" href="hapix-v0.39.html"><span class="tag">padding不具合を修正</span><h2>はぴくす v0.39</h2><p>CONTENTカードの左右非対称の原因を特定・修正。</p><strong>v0.39を見る　→</strong></a>
-  <a class="card mono" href="ginpla-v0.31.html"><span class="tag">変更なし</span><h2>銀座プランニング</h2><p>今回は変更していません（v0.31のまま）。</p><strong>v0.31を見る　→</strong></a>
+<body><main class="wrap"><div class="label">DIRECTION 24 → v0.40</div><h1>ギンプラを大幅更新</h1><p>和田さんフィードバック（2026-08-27）を反映。ギンプラ側の変更点：</p>
+<ul>
+  <li>ヒーローの見出し・サブコピーを大きく拡大</li>
+  <li>ハンバーガーメニューを追加（ハピクスLPと同じ見た目・動き）。ヒーローにあった「お問い合わせはこちら」はメニュー内へ移動</li>
+  <li>「保有物件（PORTFOLIO）」「求めている物件（SOURCING）」セクションを新設 ※中身はレイアウト確認用のダミー</li>
+  <li>「はぴくす」表記を「ハピクス」に統一（ハピクスLPも同時に統一）</li>
+  <li>ハピクスへ飛ぶリンクの色をハピクスロゴのピンク（#e5116b）に変更</li>
+  <li>フッターのリンクを整理：SNS・公式LINE・イベント・求人・アカデミー・ハピクス（「初めての方向け情報」は削除）</li>
+  <li>前回の続きで、カードのホバーは赤枠を廃止し「浮き上がり＋影」に</li>
+</ul>
+<p>ハピクスLP（v0.40）は今回「はぴくす→ハピクス」の表記統一のみ。</p><div class="grid">
+  <a class="card old" href="hapix.html"><span class="tag">表記統一のみ</span><h2>ハピクス v0.40</h2><p>「はぴくす」→「ハピクス」に統一。</p><strong>v0.40を見る　→</strong></a>
+  <a class="card mono" href="ginpla.html"><span class="tag">大幅更新</span><h2>銀座プランニング v0.40</h2><p>ヒーロー拡大・ハンバーガー・物件2セクション新設ほか。</p><strong>v0.40を見る　→</strong></a>
 </div></main></body>
 </html>
