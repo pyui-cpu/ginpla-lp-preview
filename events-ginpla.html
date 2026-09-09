@@ -12,7 +12,7 @@
     :root{
       --bg:#fafafa;--card:#fff;--ink:#1c1c1c;--sub:#6f6f6f;--navy:#101010;--red:#c81e3a;--line:#e2e2e2;--radius:4px; /* --red は仮色。ロゴの正式赤が確認でき次第差し替え */
       --hapix-pink:#e5116b; /* ハピクスLPロゴのピンク。ハピクスへ飛ぶリンクに使用 */
-      --fs-caption:11px;--fs-micro:12px;--fs-small:12.5px;--fs-button:13px;--fs-body:14px;--fs-lead:15px;--fs-h3:18px;--fs-h1:clamp(27px,7vw,40px);
+      --fs-caption:13.5px;--fs-micro:13px;--fs-small:15.5px;--fs-button:15px;--fs-body:16.5px;--fs-lead:17.5px;--fs-h3:21px;--fs-h1:clamp(27px,7vw,40px);
       --sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;--sp-6:24px;--sp-7:32px;--sp-8:40px;--sp-9:56px
     }
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;font-size:var(--fs-body);line-height:1.75;-webkit-font-smoothing:antialiased}
@@ -85,6 +85,13 @@
     .block dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:9px 16px;font-size:var(--fs-small)}
     .block dt{color:var(--sub);white-space:nowrap}
     .block dd{margin:0}
+    /* 狭い画面では、ラベル列に押されて値が細切れに折り返すのを防ぐため縦に積む */
+    @media(max-width:640px){
+      .block dl{grid-template-columns:1fr;gap:0}
+      .block dt{margin-top:12px}
+      .block dl>dt:first-of-type{margin-top:0}
+      .block dd{margin:2px 0 0}
+    }
     .block dd.pending{padding:6px 10px;border:1px dashed var(--line);background:var(--bg);color:var(--sub);border-radius:var(--radius);display:inline-block}
     .rep-row{display:flex;gap:18px;align-items:center;margin-bottom:var(--sp-4)}
     .rep-row img{width:76px;height:76px;object-fit:cover;border-radius:var(--radius);box-shadow:0 0 0 4px #fff,0 0 0 5px var(--line)}

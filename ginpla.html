@@ -45,7 +45,7 @@
     :root{
       --bg:#fafafa;--card:#fff;--ink:#1c1c1c;--sub:#6f6f6f;--navy:#101010;--red:#c81e3a;--line:#e2e2e2;--radius:4px; /* --red は仮色。ロゴの正式赤が確認でき次第差し替え */
       --hapix-pink:#e5116b; /* ハピクスLPロゴのピンク。ハピクスへ飛ぶリンクに使用 */
-      --fs-caption:12px;--fs-micro:12.5px;--fs-small:13.5px;--fs-button:13px;--fs-body:14px;--fs-lead:15px;--fs-h3:18px;--fs-h1:clamp(27px,7vw,40px);
+      --fs-caption:13.5px;--fs-micro:13px;--fs-small:15.5px;--fs-button:15px;--fs-body:16.5px;--fs-lead:17.5px;--fs-h3:21px;--fs-h1:clamp(27px,7vw,40px);
       --sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;--sp-6:24px;--sp-7:32px;--sp-8:40px;--sp-9:56px
     }
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;font-size:var(--fs-body);line-height:1.75;-webkit-font-smoothing:antialiased}
@@ -96,7 +96,7 @@
     .hero-dots button:focus-visible{outline:2px solid #fff;outline-offset:3px}
     .hero-inner{position:relative;z-index:2;max-width:560px;margin:0 auto;padding:0 26px;width:100%}
     .hero h1{margin:0 0 var(--sp-3);font-family:"Yu Mincho","Noto Serif JP",serif;font-size:var(--fs-h1);line-height:1.34;font-weight:600;letter-spacing:.02em;color:var(--ink);text-shadow:0 0 16px rgba(255,255,255,.7),0 1px 2px rgba(255,255,255,.6)}
-    .hero p.sub2{margin:0 0 var(--sp-5);font-size:clamp(13px,3.4vw,16px);font-weight:500;color:var(--ink);text-shadow:0 0 14px rgba(255,255,255,.85),0 1px 2px rgba(255,255,255,.7)}
+    .hero p.sub2{margin:0 0 var(--sp-5);font-size:clamp(14px,3.6vw,17px);font-weight:500;color:var(--ink);text-shadow:0 0 14px rgba(255,255,255,.85),0 1px 2px rgba(255,255,255,.7)}
     .hero p.sub{margin:0 0 6px;color:#222;font-size:clamp(17px,4.8vw,22px);font-weight:600;font-family:"Yu Mincho","Noto Serif JP",serif;text-shadow:0 0 14px rgba(255,255,255,.7),0 1px 2px rgba(255,255,255,.6)}
     .cta-group{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
     .cta{position:relative;display:inline-flex;overflow:hidden;padding:12px 22px;border-radius:var(--radius);text-decoration:none;font-size:var(--fs-button);font-weight:800;box-shadow:0 10px 20px -12px rgba(0,0,0,.5);transition:transform .2s ease}
@@ -119,6 +119,13 @@
     .block dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:9px 16px;font-size:var(--fs-small)}
     .block dt{color:var(--sub);white-space:nowrap}
     .block dd{margin:0}
+    /* 狭い画面では、ラベル列に押されて値が細切れに折り返すのを防ぐため縦に積む */
+    @media(max-width:640px){
+      .block dl{grid-template-columns:1fr;gap:0}
+      .block dt{margin-top:12px}
+      .block dl>dt:first-of-type{margin-top:0}
+      .block dd{margin:2px 0 0}
+    }
     .rep-row{display:flex;gap:18px;align-items:center;margin-bottom:var(--sp-4)}
     .rep-row img{width:76px;height:76px;object-fit:cover;border-radius:var(--radius);box-shadow:0 0 0 4px #fff,0 0 0 5px var(--line)}
     .rep-row h3{margin:0 0 4px;font-family:"Yu Mincho","Noto Serif JP",serif;font-size:16px;font-weight:500}
