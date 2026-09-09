@@ -159,10 +159,13 @@
     .ev-links a{display:inline-flex;align-items:center;padding:10px 18px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);font-size:var(--fs-button);font-weight:700;text-decoration:none;transition:border-color .2s ease,color .2s ease}
     .ev-links a:hover{border-color:var(--red);color:var(--red)}
     .ev-lead{margin:0 0 var(--sp-6);font-size:var(--fs-small);color:var(--sub)}
+    /* 開催予定イベント（v0.52） */
+    .block p.ev-badge{display:inline-block;margin:0 0 8px;padding:3px 10px;border-radius:999px;background:var(--red);color:#fff;font-size:12px;font-weight:800;letter-spacing:.06em}
+    .block p.ev-note{margin:var(--sp-5) 0 0;padding:14px 16px;border-radius:var(--radius);background:#f7f7f7;border-left:3px solid var(--red);font-size:var(--fs-small);line-height:1.75;color:var(--ink)}
 </style>
 </head>
 <body>
-<div class="draft">v0.49｜社内検討用・未公開（イベントページ）</div>
+<div class="draft">v0.52｜和田さん確認用・未公開（イベントページ）</div>
 <header class="brand-header"><div class="logo-wrap" style="display:flex;align-items:center;gap:10px"><img src="assets/ginpla/ginpla-logo-black.png" alt="ギンプラ ロゴ"><span><strong>銀座プランニング</strong><small>GINZA PLANNING / GINPLA</small></span></div><nav class="header-nav"><a href="ginpla.html#partners">取引実績</a><a href="ginpla.html#company">会社概要</a><a href="ginpla.html#owned">保有物件</a><a href="ginpla.html#wanted">求めている物件</a><a href="ginpla.html#rep">代表者</a><a href="ginpla.html#contact">お問い合わせ</a><a class="cross" href="hapix.html">ハピクス</a></nav><button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="メニューを開く"><span class="menu-toggle-bar"></span></button></header>
 <div class="nav-backdrop" id="navBackdrop"></div>
 <nav class="mobile-nav" id="mobileNav" aria-label="モバイルメニュー">
@@ -176,7 +179,31 @@
 </nav>
 <div class="page">
   <h2 class="section-title">EVENT</h2>
-  <p class="ev-lead">大家さん・不動産会社の経営者・受講生の皆さまが集まる場をつくっています。これまでの開催の様子をご紹介します。</p>
+  <p class="ev-lead">大家さん・不動産会社の経営者・受講生の皆さまが集まる場をつくっています。開催予定のイベントと、これまでの開催の様子をご紹介します。</p>
+
+  <div class="block reveal">
+    <p class="ev-badge">開催予定</p>
+    <h3>ギンプラ感謝祭 2026</h3>
+    <p class="ev-when">2026年11月26日（木）／グレイドパーク表参道</p>
+    <div class="ev-cols two">
+      <figure class="flyer">
+        <picture>
+          <source type="image/webp" srcset="assets/ginpla/events/kanshasai-2026-700.webp 700w, assets/ginpla/events/kanshasai-2026-984.webp 984w" sizes="(min-width:820px) 320px, 100vw">
+          <img src="assets/ginpla/events/kanshasai-2026-984.jpg" alt="ギンプラ感謝祭2026 告知バナー（2026年11月26日木曜 18時開始 グレイドパーク表参道）" width="984" height="1599" loading="lazy" decoding="async">
+        </picture>
+      </figure>
+      <div>
+        <p class="ev-label">開催概要</p>
+        <dl>
+          <dt>日時</dt><dd>2026年11月26日（木）<br>18:00 開始／21:00 終了予定</dd>
+          <dt>会場</dt><dd>グレイドパーク表参道</dd>
+          <dt>定員</dt><dd>先着60名様</dd>
+          <dt>会費</dt><dd>11,000円（税込）</dd>
+        </dl>
+        <p class="ev-note">お申し込み方法は、決まり次第このページと公式LINEでご案内します。<strong>しばらくお待ちください。</strong></p>
+      </div>
+    </div>
+  </div>
 
   <div class="block reveal">
     <h3>宮迫ゴルフコンペ 〜健康促進・予防医療〜</h3>
@@ -260,9 +287,11 @@
       els.forEach(function(el){ io.observe(el); });
     }
     var stickyTop = document.querySelector('.sticky-top');
-    var onScroll = function(){ stickyTop.classList.toggle('scrolled', window.scrollY > 8); };
-    window.addEventListener('scroll', onScroll, {passive:true});
-    onScroll();
+    if (stickyTop) {
+      var onScroll = function(){ stickyTop.classList.toggle('scrolled', window.scrollY > 8); };
+      window.addEventListener('scroll', onScroll, {passive:true});
+      onScroll();
+    }
 
     var menuToggle = document.getElementById('menuToggle');
     var mobileNav = document.getElementById('mobileNav');

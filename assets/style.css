@@ -191,3 +191,16 @@
     .yt-play:hover::after,.yt-play:focus-visible::after{background:#e5116b}
     .yt-play:focus-visible{outline:2px solid var(--brand-blue);outline-offset:3px}
     .yt-note{margin:6px 0 0;font-size:var(--fs-micro);color:var(--sub)}
+
+    /* ▼確認用マーカー（和田さん確認用。公開時はこのCSSブロックと .askguide/.ask/.askbox の要素をまとめて削除する） */
+    .askguide{margin:var(--sp-5) 2px 0;padding:13px 15px;border:1px solid #b8801f;border-left:4px solid #b8801f;background:#fff8e6;border-radius:var(--radius);font-size:var(--fs-small);color:#6b4a00;line-height:1.85}
+    .askguide strong{color:#6b4a00}
+    .ask{display:inline-block;min-width:28px;padding:1px 8px;margin-right:7px;border-radius:999px;background:#e0a83c;color:#3d2a00;font-size:12px;font-weight:800;letter-spacing:.04em;text-align:center}
+    .askbox{margin-top:var(--sp-3);padding:12px 14px;border:1px dashed #b8801f;background:#fff8e6;border-radius:var(--radius)}
+    .askbox p{margin:0;font-size:var(--fs-small);color:#6b4a00;line-height:1.85}
+    .askbox .eg{margin-top:7px;font-size:var(--fs-caption);color:#756134}
+    .askfill{margin-top:var(--sp-3);padding:10px 12px;border:1px dashed #b8801f;background:#fff8e6;border-radius:var(--radius);font-size:var(--fs-small);color:#6b4a00}
+
+    /* 開催予定イベント（v0.52） */
+    .block p.ev-badge,.ev-head p.ev-badge{display:inline-block;margin:0 0 8px;padding:3px 10px;border-radius:999px;background:#c9105a;color:#fff;font-size:12px;font-weight:800;letter-spacing:.06em}
+    .block p.ev-note{margin:var(--sp-4) 0 0;padding:14px 16px;border-radius:var(--radius);background:var(--bg-cyan);color:var(--ink);font-size:var(--fs-small);line-height:1.75}

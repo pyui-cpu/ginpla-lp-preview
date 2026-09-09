@@ -8,7 +8,7 @@
   <meta property="og:description" content="ビル再生のプロ集団。古ビルの再生解決。※作業中の草案・未公開">
   <meta property="og:type" content="website">
   <meta name="robots" content="noindex,nofollow">
-  <title>銀座プランニング｜v0.40（ヒーローは写真＋黒文字のみでシンプルに・ハンバーガー追加・物件セクション新設・ハピクス表記統一）</title>
+  <title>銀座プランニング｜v0.41（和田さん確認用・記入待ちの箇所を明示）</title>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -162,11 +162,21 @@
       .rep-row img{width:120px;height:120px}
       .rep-row{gap:28px}
     }
+    /* ▼確認用マーカー（和田さん確認用。公開時はこのCSSブロックと .askguide/.ask/.askbox/.askfill の要素をまとめて削除する） */
+    .askguide{margin:var(--sp-5) 2px 0;padding:13px 15px;border:1px solid #b8801f;border-left:4px solid #b8801f;background:#fff8e6;border-radius:var(--radius);font-size:var(--fs-small);color:#6b4a00;line-height:1.8}
+    .askguide strong{color:#6b4a00}
+    .ask{display:inline-block;min-width:28px;padding:1px 8px;margin-right:7px;border-radius:999px;background:#e0a83c;color:#3d2a00;font-size:11px;font-weight:800;letter-spacing:.04em;text-align:center}
+    .askbox{margin-top:var(--sp-3);padding:12px 14px;border:1px dashed #b8801f;background:#fff8e6;border-radius:var(--radius)}
+    div.askbox p{margin:0;font-size:var(--fs-small);color:#6b4a00;line-height:1.8}
+    div.askbox .eg{margin-top:7px;font-size:var(--fs-caption);color:#756134}
+    .block dd.askfill{padding:6px 10px;border:1px dashed #b8801f;background:#fff8e6;color:#6b4a00;border-radius:var(--radius)}
+    .block dd.askfill .eg{display:block;margin-top:4px;font-size:var(--fs-caption);color:#756134}
+    div.askbox strong,div.askguide strong{color:#6b4a00}
   </style>
 </head>
 <body>
 <div class="sticky-top">
-  <div class="draft">v0.40｜社内検討用・未公開（物件セクションの内容はダミー）</div>
+  <div class="draft">v0.41｜和田さん確認用・未公開（黄色の枠が、教えていただきたいところです）</div>
   <header class="brand-header"><div class="logo-wrap" style="display:flex;align-items:center;gap:10px"><img src="assets/ginpla/ginpla-logo-black.png" alt="ギンプラ ロゴ"><span><strong>銀座プランニング</strong><small>GINZA PLANNING / GINPLA</small></span></div><nav class="header-nav"><a href="#partners">取引実績</a><a href="#company">会社概要</a><a href="#owned">保有物件</a><a href="#wanted">求めている物件</a><a href="#rep">代表者</a><a href="#contact">お問い合わせ</a><a class="cross" href="hapix.html">ハピクス</a></nav><button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="メニューを開く"><span class="menu-toggle-bar"></span></button></header>
 </div>
 <div class="nav-backdrop" id="navBackdrop"></div>
@@ -202,6 +212,18 @@
     </div>
   </section>
 
+  <!-- ▼確認用（公開時に削除） -->
+  <div class="askguide">
+    <strong>このページの見かた</strong><br>
+    黄色の枠（<span class="ask">G◯</span>のような番号つき）が、<strong>和田さんに教えていただきたいところ</strong>です。番号は別途お送りする「確認シート」と同じ番号になっています。<br>
+    黄色以外の部分は、現行サイト（ginza-planning.com）で確認できた内容をもとに作成しています。こちらも直したいところがあれば教えてください。
+  </div>
+
+  <div class="askguide" style="margin-top:12px">
+    <span class="ask">G1</span>ファーストビューの言葉は「<strong>ビル再生のプロ集団。／古ビルの再生解決。</strong>」にしています。この打ち出しでよいでしょうか。変えたい言い方があれば教えてください。<br>
+    <span class="ask">G12</span>このページをどこで公開しますか（ginza-planning.com の中に置く／別のアドレスを取る）。
+  </div>
+
   <h2 class="section-title" id="partners">TRACK RECORD</h2>
   <div class="block reveal">
     <h3>不動産大手各社との取引実績</h3>
@@ -225,7 +247,11 @@
       <img src="assets/ginpla/partner-08-starts.png" alt="" aria-hidden="true">
       <img src="assets/ginpla/partner-09-century21.png" alt="" aria-hidden="true">
     </div></div>
-    <p style="margin-top:12px">現行サイト（ginza-planning.com）掲載の取引先一覧を1社ずつ切り出し、流れるように表示しています。個別の取引内容・件数・期間は要確認のため未記載です。</p>
+    <p style="margin-top:12px">現行サイト（ginza-planning.com）掲載の取引先一覧を1社ずつ切り出し、流れるように表示しています。個別の取引内容・件数・期間は記載していません。</p>
+    <div class="askbox">
+      <p><span class="ask">G2</span>この9社をこのまま載せてよいでしょうか。<strong>追加したい会社・外したい会社</strong>があれば教えてください。</p>
+      <p class="eg">現在の掲載：東急リバブル／OPEN HOUSE／三井不動産リアルティ／住友不動産／野村不動産ソリューションズ／みずほ不動産販売／LANDNET／スターツピタットハウス／CENTURY21</p>
+    </div>
   </div>
 
   <h2 class="section-title" id="company">COMPANY</h2>
@@ -236,39 +262,53 @@
       <dt>所在地</dt><dd>〒104-0031 東京都中央区京橋3-4-4 大根河岸ビル4階</dd>
       <dt>設立・資本金</dt><dd>2021年9月10日設立／資本金 1,000万円</dd>
       <dt>連絡先</dt><dd>TEL 03-6683-8202／FAX 03-6673-1835</dd>
-      <dt>宅地建物取引業免許番号</dt><dd class="pending">確認中（宅建業法により必須表示のため、番号確定後にこの枠へ追記します）</dd>
+      <dt>宅地建物取引業免許番号</dt><dd class="askfill"><span class="ask">G4</span>免許番号を教えてください（例：東京都知事（1）第○○○○○号）<span class="eg">不動産の広告には免許番号の表示が必要なため、公開前に必ず入れる項目です。</span></dd>
       <dt>取引金融機関</dt><dd>三菱UFJ銀行 京橋支店、三井住友信託銀行 日本橋営業部 他</dd>
     </dl>
+    <div class="askbox">
+      <p><span class="ask">G3</span>この会社概要の内容（所在地・設立・資本金・連絡先・取引金融機関）を、<strong>このまま載せてよいでしょうか</strong>。載せたくない項目、追記したい項目があれば教えてください。</p>
+      <p class="eg">現在の記載はすべて現行サイトの会社概要ページで確認できた内容です。</p>
+    </div>
   </div>
 
   <h2 class="section-title" id="owned">PORTFOLIO</h2>
   <div class="block reveal">
     <h3>保有・管理物件</h3>
     <dl>
-      <dt>物件A（ダミー）</dt><dd>東京都中央区／オフィスビル／地上8階・延床約1,200㎡／1988年築</dd>
-      <dt>物件B（ダミー）</dt><dd>東京都台東区／店舗＋住居／地上5階・延床約640㎡／1995年築</dd>
-      <dt>物件C（ダミー）</dt><dd>東京都墨田区／レジデンス／地上6階・延床約880㎡／1991年築</dd>
+      <dt>1件目</dt><dd class="askfill">記入待ち<span class="eg">記入例：東京都中央区／オフィスビル／地上8階・延床約1,200㎡／1988年築</span></dd>
+      <dt>2件目</dt><dd class="askfill">記入待ち<span class="eg">記入例：東京都台東区／店舗＋住居／地上5階・延床約640㎡／1995年築</span></dd>
+      <dt>3件目</dt><dd class="askfill">記入待ち<span class="eg">記入例：東京都墨田区／レジデンス／地上6階・延床約880㎡／1991年築</span></dd>
     </dl>
-    <p style="margin-top:12px">※ 上記はレイアウト確認用のダミーです。実際の保有・管理物件の一覧は確認後に差し替えます。</p>
+    <div class="askbox">
+      <p><span class="ask">G5</span>ここに載せる<strong>保有・管理物件を3件ほど</strong>教えてください。1件につき「所在地（区まで）／建物の種類／規模（階数・延床）／築年」があると、上の記入例の形で書けます。</p>
+      <p class="eg">物件名や地番まで出すかどうかもあわせて教えてください（区までの表記にとどめることもできます）。載せない方がよければ、このセクションごと外します。</p>
+    </div>
   </div>
 
   <h2 class="section-title" id="wanted">SOURCING</h2>
   <div class="block reveal">
     <h3>買取・再生を強化している物件条件</h3>
     <dl>
-      <dt>エリア</dt><dd>東京23区（城東・城南を中心に）（ダミー）</dd>
-      <dt>種別</dt><dd>オフィスビル・店舗ビル・一棟レジデンス（ダミー）</dd>
-      <dt>規模</dt><dd>延床 300〜3,000㎡程度（ダミー）</dd>
-      <dt>築年数</dt><dd>築25年以上・再生余地のある物件（ダミー）</dd>
-      <dt>価格帯</dt><dd class="pending">確認中（ダミー）</dd>
+      <dt>エリア</dt><dd class="askfill">記入待ち<span class="eg">記入例：東京23区（城東・城南を中心に）</span></dd>
+      <dt>種別</dt><dd class="askfill">記入待ち<span class="eg">記入例：オフィスビル・店舗ビル・一棟レジデンス</span></dd>
+      <dt>規模</dt><dd class="askfill">記入待ち<span class="eg">記入例：延床 300〜3,000㎡程度</span></dd>
+      <dt>築年数</dt><dd class="askfill">記入待ち<span class="eg">記入例：築25年以上・再生余地のある物件</span></dd>
+      <dt>価格帯</dt><dd class="askfill">記入待ち<span class="eg">記入例：1億〜10億円程度（載せない選択もできます）</span></dd>
     </dl>
-    <p style="margin-top:12px">※ 上記はレイアウト確認用のダミーです。実際に求めている物件の条件は確認後に差し替えます。</p>
+    <div class="askbox">
+      <p><span class="ask">G6</span><strong>今いちばん買いたい物件の条件</strong>を教えてください。上の5項目（エリア／種別／規模／築年数／価格帯）が埋まれば、そのまま持ち込みの窓口として使えます。</p>
+      <p class="eg">価格帯だけ出したくない場合は、その行を「ご相談ください」に変えることもできます。</p>
+    </div>
   </div>
 
   <h2 class="section-title" id="rep">REPRESENTATIVE</h2>
   <div class="block reveal">
-    <div class="rep-row"><img src="assets/ginpla/wada-profile.png" alt="代表者（現行サイト掲載写真）"><div><h4>和田真樹</h4><div class="role">代表者肩書きは要確認</div></div></div>
-    <p>代表者からのメッセージは、撮影内容・本人確認後に正式な文章へ差し替えます。写真は現行サイト（ginza-planning.com）掲載のものを使用しています。</p>
+    <div class="rep-row"><img src="assets/ginpla/wada-profile.png" alt="代表者写真（現行サイト掲載）"><div><h4>和田真樹</h4><div class="role"><span class="ask">G7</span>肩書きを教えてください（記入例：代表取締役）</div></div></div>
+    <div class="askbox">
+      <p><span class="ask">G8</span>ここに載せる<strong>ひとことメッセージ</strong>を教えてください（2〜3行程度）。「どんな物件を、どういう考えで再生しているか」が伝わる内容だと、この下のお問い合わせにつながりやすくなります。</p>
+      <p class="eg">口頭・ボイスメッセージでいただければ、こちらで文章に整えてから改めて確認いただきます。</p>
+      <p style="margin-top:9px"><span class="ask">G9</span>写真は現行サイト（ginza-planning.com）掲載のものを使っています。<strong>この写真のままでよいでしょうか</strong>。撮り直すなら次の撮影日に合わせて差し替えます。</p>
+    </div>
   </div>
 
   <h2 class="section-title" id="contact">CONTACT</h2>
@@ -279,7 +319,16 @@
       <a class="cta cta-primary" href="https://ginza-planning.com/%e3%81%8a%e5%95%8f%e3%81%84%e5%90%88%e3%82%8f%e3%81%9b/" target="_blank" rel="noopener"><span>お問い合わせ →</span></a>
       <a class="cta cta-secondary" href="https://page.line.me/199jpqpa?openQrModal=true" target="_blank" rel="noopener"><span>公式LINEで相談 →</span></a>
     </div>
+    <div class="askbox" style="margin-top:18px;text-align:left">
+      <p><span class="ask">G10</span>「お問い合わせ」は現行サイトのフォーム、「公式LINEで相談」は公式LINE（page.line.me/199jpqpa）につないでいます。<strong>この2つの受け先でよいでしょうか</strong>。電話番号のボタンも足すかどうかも教えてください。</p>
+      <p class="eg">フッターの「SNS」は lit.link/wadaemon、「求人」「アカデミー」は現行サイトの該当ページにつないでいます。こちらも変更があれば教えてください。</p>
+    </div>
   </div></div>
+
+  <!-- ▼確認用（公開時に削除） -->
+  <div class="askguide" style="margin-top:20px">
+    <span class="ask">G11</span>見出しの下線やボタンに使っている<strong>赤</strong>は、ロゴから拾った仮の色です。ブランドの正式な赤の指定（色番号やロゴデータ）があれば教えてください。
+  </div>
 
   <footer class="footer">
     <nav>

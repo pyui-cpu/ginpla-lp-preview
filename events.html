@@ -25,6 +25,20 @@
     {
       "@context": "https://schema.org",
       "@type": "Event",
+      "name": "ギンプラ感謝祭 2026",
+      "startDate": "2026-11-26T18:00:00+09:00",
+      "endDate": "2026-11-26T21:00:00+09:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {"@type": "Place", "name": "グレイドパーク表参道", "address": {"@type": "PostalAddress", "addressCountry": "JP"}},
+      "organizer": {"@type": "Organization", "name": "銀座プランニング株式会社", "url": "https://ginza-planning.com/"},
+      "image": "https://pyui-cpu.github.io/ginpla-lp-preview/assets/hapix/events/kanshasai-2026-984.jpg",
+      "maximumAttendeeCapacity": 60,
+      "description": "1年の感謝を伝える恒例のパーティー。お申し込み方法は決まり次第ご案内します。"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
       "name": "宮迫ゴルフコンペ 〜健康促進・予防医療〜",
       "startDate": "2026-06-10",
       "eventStatus": "https://schema.org/EventScheduled",
@@ -52,7 +66,7 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<div class="draft">v0.50｜社内検討用・未公開（イベントページ）</div>
+<div class="draft">v0.52｜和田さん確認用・未公開（イベントページ）</div>
 <header class="brand-header" id="siteHeader"><div class="logo-wrap" style="display:flex;align-items:center;gap:5px"><a href="hapix.html" style="display:flex" aria-label="ハピクス トップへ"><img src="assets/hapix/hapix-logo-64.png" srcset="assets/hapix/hapix-logo-64.png 1x, assets/hapix/hapix-logo-128.png 2x" alt="ハピクス" width="32" height="32"></a><a href="https://ginza-planning.com/" target="_blank" rel="noopener" style="display:flex" aria-label="銀座プランニング コーポレートサイト"><img src="assets/hapix/ginpla-logo-red-64.png" srcset="assets/hapix/ginpla-logo-red-64.png 1x, assets/hapix/ginpla-logo-red-128.png 2x" alt="ギンプラ（銀座プランニング）" width="32" height="32"></a></div><nav class="header-nav"><a href="hapix.html#content">コンテンツ</a><a href="hapix.html#channel">チャンネル</a><a href="events.html" aria-current="page">イベント</a><a href="https://ginza-planning.com/%e3%81%8a%e5%95%8f%e3%81%84%e5%90%88%e3%82%8f%e3%81%9b/" target="_blank" rel="noopener">お問い合わせ</a></nav><button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="メニューを開く"><span class="menu-toggle-bar"></span></button></header>
 <div class="nav-backdrop" id="navBackdrop"></div>
 <nav class="mobile-nav" id="mobileNav" aria-label="モバイルメニュー">
@@ -66,8 +80,36 @@
   <div class="section-head">
     <p class="eyebrow">EVENT</p>
     <h1>イベント</h1>
-    <p>大家さん・不動産会社の経営者・受講生の皆さまが集まる場をつくっています。これまでの開催の様子をご紹介します。</p>
+    <p>大家さん・不動産会社の経営者・受講生の皆さまが集まる場をつくっています。開催予定のイベントと、これまでの開催の様子をご紹介します。</p>
   </div>
+
+  <article class="block ev-card reveal">
+    <div class="ev-head">
+      <p class="ev-badge">開催予定</p>
+      <h3>ギンプラ感謝祭 2026</h3>
+      <p class="ev-when">2026年11月26日（木）／グレイドパーク表参道</p>
+    </div>
+    <div class="ev-body">
+      <div class="ev-cols two">
+        <figure class="flyer">
+          <picture>
+            <source type="image/webp" srcset="assets/hapix/events/kanshasai-2026-700.webp 700w, assets/hapix/events/kanshasai-2026-984.webp 984w" sizes="(min-width:820px) 340px, 100vw">
+            <img src="assets/hapix/events/kanshasai-2026-984.jpg" alt="ギンプラ感謝祭2026 告知バナー（2026年11月26日木曜 18時開始 グレイドパーク表参道）" width="984" height="1599" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+        <div>
+          <p class="ev-label">開催概要</p>
+          <dl class="spec">
+            <dt>日時</dt><dd>2026年11月26日（木）<br>18:00 開始／21:00 終了予定</dd>
+            <dt>会場</dt><dd>グレイドパーク表参道</dd>
+            <dt>定員</dt><dd>先着60名様</dd>
+            <dt>会費</dt><dd>11,000円（税込）</dd>
+          </dl>
+          <p class="ev-note">お申し込み方法は、決まり次第このページと公式LINEでご案内します。<strong>しばらくお待ちください。</strong></p>
+        </div>
+      </div>
+    </div>
+  </article>
 
   <article class="block ev-card reveal">
     <div class="ev-head">
