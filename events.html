@@ -82,17 +82,14 @@
     <p>大家さん・不動産会社の経営者・受講生の皆さまが集まる場をつくっています。開催予定のイベントと、これまでの開催の様子をご紹介します。</p>
   </div>
 
-  <nav class="ev-jump" aria-label="イベントの区分">
-    <a href="#upcoming">開催予定 <span>1件</span></a>
-    <a href="#past">これまでのイベント <span>2件</span></a>
-  </nav>
+  <div class="ev-tabs" id="evTabs" role="tablist" aria-label="イベントの区分" hidden>
+    <button type="button" class="ev-tab" id="tab-upcoming" data-panel="upcoming">開催予定 <span>1件</span></button>
+    <button type="button" class="ev-tab" id="tab-past" data-panel="past">これまでのイベント <span>2件</span></button>
+  </div>
 
   <section class="ev-group" id="upcoming" aria-labelledby="upcoming-title">
-    <div class="section-head">
-      <p class="eyebrow">UPCOMING</p>
-      <h2 id="upcoming-title">開催予定のイベント</h2>
-      <p>これから開催するイベントです。お申し込み方法は、決まり次第このページと公式LINEでご案内します。</p>
-    </div>
+    <h2 class="ev-group-title" id="upcoming-title">開催予定のイベント</h2>
+    <p class="ev-group-note">これから開催するイベントです。お申し込み方法は、決まり次第このページと公式LINEでご案内します。</p>
 
   <article class="block ev-card is-next reveal">
     <div class="ev-head">
@@ -125,11 +122,8 @@
   </section>
 
   <section class="ev-group is-past" id="past" aria-labelledby="past-title">
-    <div class="section-head">
-      <p class="eyebrow">PAST</p>
-      <h2 id="past-title">これまでのイベント</h2>
-      <p>過去に開催したイベントです。新しい順に掲載しています。</p>
-    </div>
+    <h2 class="ev-group-title" id="past-title">これまでのイベント</h2>
+    <p class="ev-group-note">過去に開催したイベントです。新しい順に掲載しています。</p>
 
   <article class="block ev-card is-past reveal">
     <div class="ev-head">
@@ -267,6 +261,54 @@
     navBackdrop.addEventListener('click', closeMenu);
     mobileNav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
     document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeMenu(); });
+
+    // ▼イベントのタブ切り替え（開催予定／これまで）
+    // JSが動かない環境では、タブは出さず2セクションをそのまま縦に並べて表示する
+    var tablist = document.getElementById('evTabs');
+    if (tablist) {
+      var tabs = Array.prototype.slice.call(tablist.querySelectorAll('.ev-tab'));
+      var panels = tabs.map(function(tab){ return document.getElementById(tab.getAttribute('data-panel')); });
+      if (tabs.length && panels.every(Boolean)) {
+        document.querySelector('.page').classList.add('js-tabs');
+        tablist.hidden = false;
+        panels.forEach(function(panel, i){
+          panel.setAttribute('role','tabpanel');
+          panel.setAttribute('aria-labelledby', tabs[i].id);
+          panel.setAttribute('tabindex','0');
+        });
+        tabs.forEach(function(tab){ tab.setAttribute('role','tab'); tab.setAttribute('aria-controls', tab.getAttribute('data-panel')); });
+
+        function selectTab(index, moveFocus, updateHash){
+          tabs.forEach(function(tab, i){
+            var on = i === index;
+            tab.setAttribute('aria-selected', on ? 'true' : 'false');
+            tab.tabIndex = on ? 0 : -1;
+            panels[i].hidden = !on;
+          });
+          // 表示したパネルのスクロール演出が未発火のままにならないようにする
+          panels[index].querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in-view'); });
+          if (moveFocus) tabs[index].focus();
+          // 読み込み直後にURLを書き換えない（操作したときだけ #upcoming / #past を反映する）
+          if (updateHash && history.replaceState) history.replaceState(null, '', '#' + tabs[index].getAttribute('data-panel'));
+        }
+
+        tabs.forEach(function(tab, i){
+          tab.addEventListener('click', function(){ selectTab(i, false, true); });
+          tab.addEventListener('keydown', function(e){
+            var last = tabs.length - 1, next = null;
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next = i === last ? 0 : i + 1;
+            else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') next = i === 0 ? last : i - 1;
+            else if (e.key === 'Home') next = 0;
+            else if (e.key === 'End') next = last;
+            if (next !== null) { e.preventDefault(); selectTab(next, true, true); }
+          });
+        });
+
+        // #past / #upcoming のリンクで開いたときは、そのタブを選んだ状態にする
+        var fromHash = tabs.findIndex(function(tab){ return '#' + tab.getAttribute('data-panel') === location.hash; });
+        selectTab(fromHash > -1 ? fromHash : 0, false, false);
+      }
+    }
   })();
 </script>
 <!-- ▼GA4：測定ID（G-から始まる11桁）が決まったら、下のコメントを外して2か所のG-XXXXXXXXXXを差し替える -->
