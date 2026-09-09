@@ -201,6 +201,6 @@
     .askbox .eg{margin-top:7px;font-size:var(--fs-caption);color:#756134}
     .askfill{margin-top:var(--sp-3);padding:10px 12px;border:1px dashed #b8801f;background:#fff8e6;border-radius:var(--radius);font-size:var(--fs-small);color:#6b4a00}
 
-    /* 開催予定イベント（v0.52） */
+    /* 開催予定イベント */
     .block p.ev-badge,.ev-head p.ev-badge{display:inline-block;margin:0 0 8px;padding:3px 10px;border-radius:999px;background:#c9105a;color:#fff;font-size:12px;font-weight:800;letter-spacing:.06em}
     .block p.ev-note{margin:var(--sp-4) 0 0;padding:14px 16px;border-radius:var(--radius);background:var(--bg-cyan);color:var(--ink);font-size:var(--fs-small);line-height:1.75}
