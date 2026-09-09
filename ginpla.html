@@ -3,12 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="銀座プランニング株式会社（ギンプラ）｜ビル再生のプロ集団。東京都中央区京橋。※作業中の草案です。">
-  <meta property="og:title" content="銀座プランニング株式会社｜GINPLA">
-  <meta property="og:description" content="ビル再生のプロ集団。古ビルの再生解決。※作業中の草案・未公開">
+  <meta name="description" content="銀座プランニング株式会社（ギンプラ）｜ビル再生のプロ集団。東京都中央区京橋。ビルの買取・再生と売買仲介を行っています。">
+  <link rel="canonical" href="https://pyui-cpu.github.io/ginpla-lp-preview/ginpla.html">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="銀座プランニング株式会社">
+  <meta property="og:title" content="銀座プランニング株式会社｜GINPLA">
+  <meta property="og:description" content="ビル再生のプロ集団。古ビルの再生解決。">
+  <meta property="og:url" content="https://pyui-cpu.github.io/ginpla-lp-preview/ginpla.html">
+  <meta property="og:image" content="https://pyui-cpu.github.io/ginpla-lp-preview/assets/ginpla/ogp.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://pyui-cpu.github.io/ginpla-lp-preview/assets/ginpla/ogp.jpg">
+  <meta name="theme-color" content="#1c1c1c">
+  <link rel="icon" href="assets/ginpla/favicon-32.png" sizes="32x32">
+  <link rel="icon" href="assets/ginpla/favicon-512.png" sizes="512x512">
+  <link rel="apple-touch-icon" href="assets/ginpla/apple-touch-icon.png">
   <meta name="robots" content="noindex,nofollow">
-  <title>銀座プランニング｜v0.41（和田さん確認用・記入待ちの箇所を明示）</title>
+  <title>銀座プランニング｜v0.42（実装品質の改善・記入待ちは継続）</title>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -16,7 +26,8 @@
     "name": "銀座プランニング株式会社",
     "alternateName": ["ギンプラ", "GINZA PLANNING"],
     "url": "https://ginza-planning.com/",
-    "logo": "assets/ginpla/ginpla-logo-black.png",
+    "logo": "https://pyui-cpu.github.io/ginpla-lp-preview/assets/ginpla/ginpla-logo-black.png",
+    "image": "https://pyui-cpu.github.io/ginpla-lp-preview/assets/ginpla/ogp.jpg",
     "foundingDate": "2021-09-10",
     "telephone": "+81-3-6683-8202",
     "faxNumber": "+81-3-6673-1835",
@@ -34,7 +45,7 @@
     :root{
       --bg:#fafafa;--card:#fff;--ink:#1c1c1c;--sub:#6f6f6f;--navy:#101010;--red:#c81e3a;--line:#e2e2e2;--radius:4px; /* --red は仮色。ロゴの正式赤が確認でき次第差し替え */
       --hapix-pink:#e5116b; /* ハピクスLPロゴのピンク。ハピクスへ飛ぶリンクに使用 */
-      --fs-caption:11px;--fs-micro:12px;--fs-small:12.5px;--fs-button:13px;--fs-body:14px;--fs-lead:15px;--fs-h3:18px;--fs-h1:clamp(27px,7vw,40px);
+      --fs-caption:12px;--fs-micro:12.5px;--fs-small:13.5px;--fs-button:13px;--fs-body:14px;--fs-lead:15px;--fs-h3:18px;--fs-h1:clamp(27px,7vw,40px);
       --sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;--sp-6:24px;--sp-7:32px;--sp-8:40px;--sp-9:56px
     }
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;font-size:var(--fs-body);line-height:1.75;-webkit-font-smoothing:antialiased}
@@ -66,7 +77,7 @@
     .mobile-nav a.cross{margin-top:10px;align-self:flex-start;padding:8px 14px;border-radius:var(--radius);background:var(--hapix-pink);color:#fff;border-bottom:0}
     @media (prefers-reduced-motion: reduce){.mobile-nav,.nav-backdrop{transition:none}}
     .page{max-width:600px;margin:0 auto;padding:0 var(--sp-5) var(--sp-9)}
-    .hero{position:relative;overflow:hidden;width:100vw;margin-left:calc(50% - 50vw);margin-top:var(--sp-4);min-height:460px;display:flex;flex-direction:column;justify-content:center;padding:38px 0;background:linear-gradient(180deg,#1a1a1a 0%,#2b2b2b 60%,#3a3a3a 100%);color:#fff}
+    .hero{position:relative;overflow:hidden;width:100vw;margin-left:calc(50% - 50vw);margin-top:var(--sp-4);min-height:460px;display:flex;flex-direction:column;justify-content:center;padding:38px 0;background:linear-gradient(180deg,#efece7 0%,#e2ded8 60%,#d8d3cc 100%);color:#fff}
     .hero-slider{position:absolute;inset:0;z-index:0}
     .hero-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease}
     .hero-slide.is-active{opacity:1;z-index:1}
@@ -75,9 +86,12 @@
       @keyframes hero-kenburns{from{transform:scale(1)}to{transform:scale(1.025)}}
     }
     @media (prefers-reduced-motion: reduce){.hero-slide{transition:opacity .15s linear}}
-    .hero-overlay{display:none}
-    .hero-dots{position:absolute;left:0;right:0;bottom:16px;z-index:3;display:flex;justify-content:center;gap:10px}
-    .hero-dots button{width:9px;height:9px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.45);cursor:pointer;transition:background-color .2s ease,transform .2s ease}
+    .hero-dots{position:absolute;left:0;right:0;bottom:14px;display:flex;justify-content:center;align-items:center;gap:4px;z-index:3}
+    .hero-dots button{width:24px;height:24px;padding:0;border:0;background:none;border-radius:50%;cursor:pointer;display:grid;place-items:center}
+    .hero-dots button::before{content:"";width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.55);box-shadow:0 0 0 1px rgba(16,16,16,.6);transition:background .2s ease,box-shadow .2s ease}
+    .hero-dots button[aria-current="true"]::before{background:#fff;box-shadow:0 0 0 2px rgba(16,16,16,.75)}
+    .hero-pause{width:24px;height:24px;margin-left:2px;padding:0;border:0;background:none;cursor:pointer;display:grid;place-items:center}
+    .hero-pause svg{width:11px;height:11px;fill:#fff;filter:drop-shadow(0 0 1px rgba(16,16,16,.9))}
     .hero-dots button:hover{background:rgba(255,255,255,.7)}
     .hero-dots button[aria-current="true"]{background:#fff;transform:scale(1.2)}
     .hero-dots button:focus-visible{outline:2px solid #fff;outline-offset:3px}
@@ -96,8 +110,6 @@
     .hero .cta{color:#fff;background:var(--red)}
     .hero .cta::before{background:var(--ink)}
     .hero .cta span{color:#fff}
-    .cta-text-link{color:rgba(255,255,255,.82);font-size:var(--fs-button);font-weight:700;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.4)}
-    .cta-text-link:hover{color:#fff;text-decoration-color:#fff}
     .section-title{display:flex;align-items:center;gap:9px;margin:var(--sp-9) 2px var(--sp-4);font-size:var(--fs-micro);font-weight:800;letter-spacing:.18em;color:var(--sub)}
     .section-title::before{content:"";width:18px;height:2px;background:var(--red);opacity:.85}
     .block{position:relative;display:block;margin-bottom:var(--sp-4);padding:var(--sp-7) var(--sp-7) 28px;border-radius:var(--radius);background:var(--card);border:1px solid var(--line);box-shadow:0 1px 2px rgba(0,0,0,.04),0 10px 22px -16px rgba(0,0,0,.18);transition:transform .25s ease,box-shadow .25s ease,border-color .2s ease}
@@ -107,10 +119,9 @@
     .block dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:9px 16px;font-size:var(--fs-small)}
     .block dt{color:var(--sub);white-space:nowrap}
     .block dd{margin:0}
-    .block dd.pending{padding:6px 10px;border:1px dashed var(--line);background:var(--bg);color:var(--sub);border-radius:var(--radius);display:inline-block}
     .rep-row{display:flex;gap:18px;align-items:center;margin-bottom:var(--sp-4)}
     .rep-row img{width:76px;height:76px;object-fit:cover;border-radius:var(--radius);box-shadow:0 0 0 4px #fff,0 0 0 5px var(--line)}
-    .rep-row h4{margin:0 0 4px;font-family:serif;font-size:16px;font-weight:500}
+    .rep-row h3{margin:0 0 4px;font-family:"Yu Mincho","Noto Serif JP",serif;font-size:16px;font-weight:500}
     .rep-row .role{font-size:var(--fs-caption);color:var(--sub)}
     .partners-track{overflow:hidden;border-radius:var(--radius);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
     .partners-marquee{display:flex;align-items:center;width:max-content}
@@ -130,7 +141,7 @@
     .footer nav a:hover{border-color:var(--ink);transform:translateY(-1px)}
     .footer nav a.cross{background:var(--hapix-pink);color:#fff;border-color:var(--hapix-pink)}
     .footer nav a.cross:hover{border-color:var(--hapix-pink);opacity:.9}
-    .footer .legal{margin-top:10px;color:#9a9a9a}
+    .footer .legal{margin-top:10px;color:var(--sub)}
     @media (prefers-reduced-motion: no-preference){
       .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
       .reveal.in-view{opacity:1;transform:none}
@@ -170,13 +181,15 @@
     div.askbox p{margin:0;font-size:var(--fs-small);color:#6b4a00;line-height:1.8}
     div.askbox .eg{margin-top:7px;font-size:var(--fs-caption);color:#756134}
     .block dd.askfill{padding:6px 10px;border:1px dashed #b8801f;background:#fff8e6;color:#6b4a00;border-radius:var(--radius)}
+    .askfill{padding:8px 12px;border:1px dashed #b8801f;background:#fff8e6;color:#6b4a00;border-radius:var(--radius);font-size:var(--fs-small);line-height:1.7}
     .block dd.askfill .eg{display:block;margin-top:4px;font-size:var(--fs-caption);color:#756134}
     div.askbox strong,div.askguide strong{color:#6b4a00}
   </style>
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
 <div class="sticky-top">
-  <div class="draft">v0.41｜和田さん確認用・未公開（黄色の枠が、教えていただきたいところです）</div>
+  <div class="draft">v0.42｜和田さん確認用・未公開（黄色の枠が、教えていただきたいところです）</div>
   <header class="brand-header"><div class="logo-wrap" style="display:flex;align-items:center;gap:10px"><img src="assets/ginpla/ginpla-logo-black.png" alt="ギンプラ ロゴ"><span><strong>銀座プランニング</strong><small>GINZA PLANNING / GINPLA</small></span></div><nav class="header-nav"><a href="#partners">取引実績</a><a href="#company">会社概要</a><a href="#owned">保有物件</a><a href="#wanted">求めている物件</a><a href="#rep">代表者</a><a href="#contact">お問い合わせ</a><a class="cross" href="hapix.html">ハピクス</a></nav><button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="メニューを開く"><span class="menu-toggle-bar"></span></button></header>
 </div>
 <div class="nav-backdrop" id="navBackdrop"></div>
@@ -186,16 +199,29 @@
   <a href="#owned">保有物件</a>
   <a href="#wanted">求めている物件</a>
   <a href="#rep">代表者</a>
-  <a href="https://ginza-planning.com/%e3%81%8a%e5%95%8f%e3%81%84%e5%90%88%e3%82%8f%e3%81%9b/" target="_blank" rel="noopener">お問い合わせ</a>
+  <a href="events-ginpla.html">イベント</a>
+  <a href="#contact">お問い合わせ</a>
   <a class="cross" href="hapix.html">ハピクス →</a>
 </nav>
 <div class="page">
   <section class="hero">
-    <div class="hero-slider">
-      <img class="hero-slide is-active" src="assets/ginpla/hero/ginpla-hero-01-before-bright-v0.1.png" alt="再生前の既存ビル外観" style="object-position:78% 55%">
-      <img class="hero-slide" src="assets/ginpla/hero/ginpla-hero-02-planning-bright-v0.1.png" alt="企画・設計の打ち合わせ風景" style="object-position:66% 42%">
-      <img class="hero-slide" src="assets/ginpla/hero/ginpla-hero-03-renovation-bright-v0.1.png" alt="再生工事中のビル外観" style="object-position:70% 60%">
-      <img class="hero-slide" src="assets/ginpla/hero/ginpla-hero-04-after-bright-v0.1.png" alt="再生後のビル外観" style="object-position:78% 55%">
+    <div class="hero-slider" aria-roledescription="carousel">
+      <picture>
+        <source type="image/webp" srcset="assets/ginpla/hero/ginpla-hero-01-before-bright-v0.1-700.webp 700w, assets/ginpla/hero/ginpla-hero-01-before-bright-v0.1-1300.webp 1300w" sizes="100vw">
+        <img class="hero-slide is-active" src="assets/ginpla/hero/ginpla-hero-01-before-bright-v0.1-1300.jpg" alt="再生前の既存ビル外観" width="1536" height="1024" fetchpriority="high" decoding="async" style="object-position:78% 55%">
+      </picture>
+      <picture>
+        <source type="image/webp" srcset="assets/ginpla/hero/ginpla-hero-02-planning-bright-v0.1-700.webp 700w, assets/ginpla/hero/ginpla-hero-02-planning-bright-v0.1-1300.webp 1300w" sizes="100vw">
+        <img class="hero-slide" src="assets/ginpla/hero/ginpla-hero-02-planning-bright-v0.1-1300.jpg" alt="企画・設計の打ち合わせ風景" width="1660" height="947" loading="lazy" decoding="async" style="object-position:66% 42%" aria-hidden="true">
+      </picture>
+      <picture>
+        <source type="image/webp" srcset="assets/ginpla/hero/ginpla-hero-03-renovation-bright-v0.1-700.webp 700w, assets/ginpla/hero/ginpla-hero-03-renovation-bright-v0.1-1300.webp 1300w" sizes="100vw">
+        <img class="hero-slide" src="assets/ginpla/hero/ginpla-hero-03-renovation-bright-v0.1-1300.jpg" alt="再生工事中のビル外観" width="1672" height="941" loading="lazy" decoding="async" style="object-position:70% 60%" aria-hidden="true">
+      </picture>
+      <picture>
+        <source type="image/webp" srcset="assets/ginpla/hero/ginpla-hero-04-after-bright-v0.1-700.webp 700w, assets/ginpla/hero/ginpla-hero-04-after-bright-v0.1-1300.webp 1300w" sizes="100vw">
+        <img class="hero-slide" src="assets/ginpla/hero/ginpla-hero-04-after-bright-v0.1-1300.jpg" alt="再生後のビル外観" width="1536" height="1024" loading="lazy" decoding="async" style="object-position:78% 55%" aria-hidden="true">
+      </picture>
     </div>
     <div class="hero-inner">
       <h1>ビル再生の<br>プロ集団。</h1>
@@ -204,11 +230,12 @@
         <a class="cta" href="#partners"><span>取引実績を見る →</span></a>
       </div>
     </div>
-    <div class="hero-dots">
+    <div class="hero-dots" role="group" aria-label="ヒーロー画像の切り替え">
       <button type="button" data-index="0" aria-current="true" aria-label="1枚目: 再生前の既存ビルを表示"></button>
       <button type="button" data-index="1" aria-current="false" aria-label="2枚目: 企画・設計の様子を表示"></button>
       <button type="button" data-index="2" aria-current="false" aria-label="3枚目: 再生工事の様子を表示"></button>
       <button type="button" data-index="3" aria-current="false" aria-label="4枚目: 再生後のビルを表示"></button>
+      <button type="button" class="hero-pause" id="heroPause" aria-label="画像の自動切り替えを止める" aria-pressed="false"><svg viewBox="0 0 12 12" aria-hidden="true"><rect x="1" y="1" width="3.4" height="10" rx="1"></rect><rect x="7.6" y="1" width="3.4" height="10" rx="1"></rect></svg></button>
     </div>
   </section>
 
@@ -228,28 +255,29 @@
   <div class="block reveal">
     <h3>不動産大手各社との取引実績</h3>
     <div class="partners-track"><div class="partners-marquee">
-      <img src="assets/ginpla/partner-01-tokyu-livable.png" alt="東急リバブル">
-      <img src="assets/ginpla/partner-02-openhouse.png" alt="OPEN HOUSE">
-      <img src="assets/ginpla/partner-03-mitsui-realty.png" alt="三井不動産リアルティ">
-      <img src="assets/ginpla/partner-04-sumitomo.png" alt="住友不動産">
-      <img src="assets/ginpla/partner-05-nomura.png" alt="野村不動産ソリューションズ">
-      <img src="assets/ginpla/partner-06-mizuho.png" alt="みずほ不動産販売">
-      <img src="assets/ginpla/partner-07-landnet.png" alt="LANDNET">
-      <img src="assets/ginpla/partner-08-starts.png" alt="スターツピタットハウス">
-      <img src="assets/ginpla/partner-09-century21.png" alt="CENTURY21">
-      <img src="assets/ginpla/partner-01-tokyu-livable.png" alt="" aria-hidden="true">
-      <img src="assets/ginpla/partner-02-openhouse.png" alt="" aria-hidden="true">
-      <img src="assets/ginpla/partner-03-mitsui-realty.png" alt="" aria-hidden="true">
-      <img src="assets/ginpla/partner-04-sumitomo.png" alt="" aria-hidden="true">
-      <img src="assets/ginpla/partner-05-nomura.png" alt="" aria-hidden="true">
-      <img src="assets/ginpla/partner-06-mizuho.png" alt="" aria-hidden="true">
-      <img src="assets/ginpla/partner-07-landnet.png" alt="" aria-hidden="true">
-      <img src="assets/ginpla/partner-08-starts.png" alt="" aria-hidden="true">
-      <img src="assets/ginpla/partner-09-century21.png" alt="" aria-hidden="true">
+      <img src="assets/ginpla/partner-01-tokyu-livable.png" width="278" height="84" loading="lazy" decoding="async" alt="東急リバブル">
+      <img src="assets/ginpla/partner-02-openhouse.png" width="319" height="84" loading="lazy" decoding="async" alt="OPEN HOUSE">
+      <img src="assets/ginpla/partner-03-mitsui-realty.png" width="319" height="84" loading="lazy" decoding="async" alt="三井不動産リアルティ">
+      <img src="assets/ginpla/partner-04-sumitomo.png" width="278" height="93" loading="lazy" decoding="async" alt="住友不動産">
+      <img src="assets/ginpla/partner-05-nomura.png" width="319" height="93" loading="lazy" decoding="async" alt="野村不動産ソリューションズ">
+      <img src="assets/ginpla/partner-06-mizuho.png" width="319" height="93" loading="lazy" decoding="async" alt="みずほ不動産販売">
+      <img src="assets/ginpla/partner-07-landnet.png" width="278" height="89" loading="lazy" decoding="async" alt="LANDNET">
+      <img src="assets/ginpla/partner-08-starts.png" width="319" height="89" loading="lazy" decoding="async" alt="スターツピタットハウス">
+      <img src="assets/ginpla/partner-09-century21.png" width="319" height="89" loading="lazy" decoding="async" alt="CENTURY21">
+      <img src="assets/ginpla/partner-01-tokyu-livable.png" width="278" height="84" loading="lazy" decoding="async" alt="" aria-hidden="true">
+      <img src="assets/ginpla/partner-02-openhouse.png" width="319" height="84" loading="lazy" decoding="async" alt="" aria-hidden="true">
+      <img src="assets/ginpla/partner-03-mitsui-realty.png" width="319" height="84" loading="lazy" decoding="async" alt="" aria-hidden="true">
+      <img src="assets/ginpla/partner-04-sumitomo.png" width="278" height="93" loading="lazy" decoding="async" alt="" aria-hidden="true">
+      <img src="assets/ginpla/partner-05-nomura.png" width="319" height="93" loading="lazy" decoding="async" alt="" aria-hidden="true">
+      <img src="assets/ginpla/partner-06-mizuho.png" width="319" height="93" loading="lazy" decoding="async" alt="" aria-hidden="true">
+      <img src="assets/ginpla/partner-07-landnet.png" width="278" height="89" loading="lazy" decoding="async" alt="" aria-hidden="true">
+      <img src="assets/ginpla/partner-08-starts.png" width="319" height="89" loading="lazy" decoding="async" alt="" aria-hidden="true">
+      <img src="assets/ginpla/partner-09-century21.png" width="319" height="89" loading="lazy" decoding="async" alt="" aria-hidden="true">
     </div></div>
-    <p style="margin-top:12px">現行サイト（ginza-planning.com）掲載の取引先一覧を1社ずつ切り出し、流れるように表示しています。個別の取引内容・件数・期間は記載していません。</p>
+    <p style="margin-top:12px">※ 社名は敬称略・順不同。個別の取引内容・件数・期間は記載していません。</p>
     <div class="askbox">
-      <p><span class="ask">G2</span>この9社をこのまま載せてよいでしょうか。<strong>追加したい会社・外したい会社</strong>があれば教えてください。</p>
+      <p><span class="ask">G2</span>この9社をこのまま載せてよいでしょうか。<strong>追加したい会社・外したい会社</strong>があれば教えてください。<strong>ロゴ画像での掲載許諾</strong>があるかもあわせて教えてください（許諾がなければ社名テキストでの掲載に切り替えます）。</p>
+      <p class="eg">現行サイト（ginza-planning.com）掲載の取引先一覧をもとに、1社ずつ切り出して表示しています。</p>
       <p class="eg">現在の掲載：東急リバブル／OPEN HOUSE／三井不動産リアルティ／住友不動産／野村不動産ソリューションズ／みずほ不動産販売／LANDNET／スターツピタットハウス／CENTURY21</p>
     </div>
   </div>
@@ -303,7 +331,7 @@
 
   <h2 class="section-title" id="rep">REPRESENTATIVE</h2>
   <div class="block reveal">
-    <div class="rep-row"><img src="assets/ginpla/wada-profile.png" alt="代表者写真（現行サイト掲載）"><div><h4>和田真樹</h4><div class="role"><span class="ask">G7</span>肩書きを教えてください（記入例：代表取締役）</div></div></div>
+    <div class="rep-row"><picture><source type="image/webp" srcset="assets/ginpla/wada-profile-152.webp"><img src="assets/ginpla/wada-profile-152.jpg" alt="代表者 和田真樹" width="152" height="152" loading="lazy" decoding="async"></picture><div><h3>和田真樹</h3><div class="role"><span class="ask">G7</span>肩書きを教えてください（記入例：代表取締役）</div></div></div>
     <div class="askbox">
       <p><span class="ask">G8</span>ここに載せる<strong>ひとことメッセージ</strong>を教えてください（2〜3行程度）。「どんな物件を、どういう考えで再生しているか」が伝わる内容だと、この下のお問い合わせにつながりやすくなります。</p>
       <p class="eg">口頭・ボイスメッセージでいただければ、こちらで文章に整えてから改めて確認いただきます。</p>
@@ -335,7 +363,8 @@
       <a href="https://lit.link/wadaemon" target="_blank" rel="noopener">SNS</a><a href="https://page.line.me/199jpqpa?openQrModal=true" target="_blank" rel="noopener">公式LINE</a><a href="events-ginpla.html">イベント</a><a href="https://ginza-planning.com/%e6%b1%82%e4%ba%ba/" target="_blank" rel="noopener">求人</a><a href="https://ginza-planning.com/business/real-estate-academy/" target="_blank" rel="noopener">アカデミー</a>
       <a class="cross" href="hapix.html">ハピクス →</a>
     </nav>
-    〒104-0031 東京都中央区京橋3-4-4 大根河岸ビル4階　TEL 03-6683-8202　FAX 03-6673-1835（現行サイト会社概要ページで確認済み）。代表者：和田真樹（肩書きは要確認）。宅地建物取引業免許番号：確認中（確定次第追記）
+    〒104-0031 東京都中央区京橋3-4-4 大根河岸ビル4階　TEL <a href="tel:0366838202">03-6683-8202</a>　FAX 03-6673-1835　代表者：和田真樹
+    <div class="askfill" style="display:block;margin-top:10px;text-align:left"><span class="ask">G4</span>宅地建物取引業免許番号（公開前に必須。番号をいただき次第ここに入ります）</div>
     <div class="legal">© 銀座プランニング株式会社　本ページは社内検討用の草案です。公開・外部共有はしていません。</div>
   </footer>
 </div>
@@ -361,25 +390,32 @@
     var navBackdrop = document.getElementById('navBackdrop');
     function openMenu(){
       mobileNav.classList.add('open');
+      mobileNav.removeAttribute('inert');
       navBackdrop.classList.add('open');
       menuToggle.setAttribute('aria-expanded','true');
       menuToggle.setAttribute('aria-label','メニューを閉じる');
       document.body.style.overflow = 'hidden';
+      var first = mobileNav.querySelector('a');
+      if (first) first.focus();
     }
     function closeMenu(){
+      var hadFocus = mobileNav.contains(document.activeElement);
       mobileNav.classList.remove('open');
       navBackdrop.classList.remove('open');
       menuToggle.setAttribute('aria-expanded','false');
       menuToggle.setAttribute('aria-label','メニューを開く');
       document.body.style.overflow = '';
+      if (hadFocus) menuToggle.focus();
+      mobileNav.setAttribute('inert','');
     }
     if (menuToggle && mobileNav && navBackdrop) {
+      mobileNav.setAttribute('inert','');
       menuToggle.addEventListener('click', function(){
         var isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
         if (isOpen) { closeMenu(); } else { openMenu(); }
       });
       navBackdrop.addEventListener('click', closeMenu);
-      mobileNav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+      mobileNav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ mobileNav.classList.remove('open'); navBackdrop.classList.remove('open'); menuToggle.setAttribute('aria-expanded','false'); menuToggle.setAttribute('aria-label','メニューを開く'); document.body.style.overflow = ''; mobileNav.setAttribute('inert',''); }); });
       document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeMenu(); });
     }
   })();
@@ -390,7 +426,16 @@
     var current = 0;
     var timer = null;
     var INTERVAL = 6000;
+    var pauseBtn = document.getElementById('heroPause');
+    var reduceMotion = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+    var userPaused = false;
 
+    function syncHidden(){
+      slides.forEach(function(el, i){
+        if (i === current) { el.removeAttribute('aria-hidden'); }
+        else { el.setAttribute('aria-hidden', 'true'); }
+      });
+    }
     function goTo(index){
       if (index === current) return;
       slides[current].classList.remove('is-active');
@@ -398,17 +443,33 @@
       current = index;
       slides[current].classList.add('is-active');
       dots[current].setAttribute('aria-current', 'true');
+      syncHidden();
     }
     function next(){ goTo((current + 1) % slides.length); }
     function stop(){ if (timer) { clearInterval(timer); timer = null; } }
-    function start(){ stop(); timer = setInterval(next, INTERVAL); }
+    function start(){
+      stop();
+      if (userPaused) return;
+      if (reduceMotion && reduceMotion.matches) return;
+      timer = setInterval(next, INTERVAL);
+    }
 
     dots.forEach(function(dot, i){
       dot.addEventListener('click', function(){ goTo(i); start(); });
     });
+    if (pauseBtn) {
+      pauseBtn.addEventListener('click', function(){
+        userPaused = !userPaused;
+        pauseBtn.setAttribute('aria-pressed', userPaused ? 'true' : 'false');
+        pauseBtn.setAttribute('aria-label', userPaused ? '画像の自動切り替えを再開する' : '画像の自動切り替えを止める');
+        if (userPaused) { stop(); } else { start(); }
+      });
+      if (reduceMotion && reduceMotion.matches) { pauseBtn.hidden = true; }
+    }
     document.addEventListener('visibilitychange', function(){
       if (document.hidden) { stop(); } else { start(); }
     });
+    syncHidden();
     if (!document.hidden) start();
   })();
 </script>
