@@ -9,11 +9,13 @@
     picture{display:contents}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;font-size:var(--fs-body);line-height:1.7;-webkit-font-smoothing:antialiased}
     a{color:inherit}
-    a:focus-visible,.block:focus-visible,.cta:focus-visible,.channel-row:focus-visible,.menu-toggle:focus-visible{outline:2px solid var(--brand-blue);outline-offset:3px}
+    a:focus-visible,.block:focus-visible,.cta:focus-visible,.channel-row:focus-visible,.menu-toggle:focus-visible,.logo-home:focus-visible{outline:2px solid var(--brand-blue);outline-offset:3px}
     .draft{padding:6px;background:#242424;color:#fff;text-align:center;font-size:12px;letter-spacing:.04em}
     .brand-header{position:sticky;top:0;z-index:41;display:flex;align-items:center;gap:10px;padding:12px 16px;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:box-shadow .25s ease}
     .brand-header.scrolled{box-shadow:0 10px 26px -18px rgba(26,26,26,.22)}
     .brand-header img{width:32px;height:32px;border-radius:0}
+    .logo-wrap{display:flex;align-items:center}
+    .logo-home{display:flex;align-items:center;gap:5px;text-decoration:none;border-radius:2px}
     .header-nav{display:none}
     .menu-toggle{position:relative;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;margin-left:auto;padding:0;border:0;background:none;cursor:pointer}
     .menu-toggle-bar,.menu-toggle-bar::before,.menu-toggle-bar::after{position:absolute;top:50%;left:50%;width:20px;height:2px;margin:-1px 0 0 -10px;border-radius:2px;background:var(--ink);transition:transform .25s ease,opacity .2s ease}
@@ -203,4 +205,19 @@
 
     /* 開催予定イベント */
     .block p.ev-badge,.ev-head p.ev-badge{display:inline-block;margin:0 0 8px;padding:3px 10px;border-radius:999px;background:#c9105a;color:#fff;font-size:12px;font-weight:800;letter-spacing:.06em}
+    .block p.ev-badge.done,.ev-head p.ev-badge.done{background:#5a6472}
+
+    /* 開催予定／これまでのイベント の区分 */
+    .ev-jump{display:flex;flex-wrap:wrap;gap:8px;margin:var(--sp-5) 2px 0}
+    .ev-jump a{display:inline-flex;align-items:baseline;gap:7px;padding:9px 16px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--navy);font-size:var(--fs-button);font-weight:700;text-decoration:none;transition:border-color .2s ease,color .2s ease}
+    .ev-jump a span{font-size:var(--fs-micro);font-weight:700;color:var(--sub)}
+    @media (hover:hover) and (pointer:fine){
+      .ev-jump a:hover{border-color:var(--brand-pink);color:var(--brand-pink)}
+    }
+    .ev-group{scroll-margin-top:72px}
+    .ev-group .section-head{margin-bottom:var(--sp-5)}
+    .ev-group.is-past .eyebrow::before{background:var(--sub);opacity:.55}
+    .ev-card.is-next{border-color:#f3b9d0}
+    .ev-card.is-next .ev-head{background:#fff0f6;border-bottom-color:#f3b9d0}
+    .ev-card.is-past .ev-head{background:#f3f5f7;border-bottom-color:#e3e8ed}
     .block p.ev-note{margin:var(--sp-4) 0 0;padding:14px 16px;border-radius:var(--radius);background:var(--bg-cyan);color:var(--ink);font-size:var(--fs-small);line-height:1.75}

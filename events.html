@@ -66,7 +66,7 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<header class="brand-header" id="siteHeader"><div class="logo-wrap" style="display:flex;align-items:center;gap:5px"><a href="hapix.html" style="display:flex" aria-label="ハピクス トップへ"><img src="assets/hapix/hapix-logo-64.png" srcset="assets/hapix/hapix-logo-64.png 1x, assets/hapix/hapix-logo-128.png 2x" alt="ハピクス" width="32" height="32"></a><a href="https://ginza-planning.com/" target="_blank" rel="noopener" style="display:flex" aria-label="銀座プランニング コーポレートサイト"><img src="assets/hapix/ginpla-logo-red-64.png" srcset="assets/hapix/ginpla-logo-red-64.png 1x, assets/hapix/ginpla-logo-red-128.png 2x" alt="ギンプラ（銀座プランニング）" width="32" height="32"></a></div><nav class="header-nav"><a href="hapix.html#content">コンテンツ</a><a href="hapix.html#channel">チャンネル</a><a href="events.html" aria-current="page">イベント</a><a href="https://ginza-planning.com/%e3%81%8a%e5%95%8f%e3%81%84%e5%90%88%e3%82%8f%e3%81%9b/" target="_blank" rel="noopener">お問い合わせ</a></nav><button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="メニューを開く"><span class="menu-toggle-bar"></span></button></header>
+<header class="brand-header" id="siteHeader"><div class="logo-wrap"><a class="logo-home" href="hapix.html" aria-label="ハピクス トップへ"><img src="assets/hapix/hapix-logo-64.png" srcset="assets/hapix/hapix-logo-64.png 1x, assets/hapix/hapix-logo-128.png 2x" alt="ハピクス" width="32" height="32"><img src="assets/hapix/ginpla-logo-red-64.png" srcset="assets/hapix/ginpla-logo-red-64.png 1x, assets/hapix/ginpla-logo-red-128.png 2x" alt="ギンプラ（銀座プランニング）" width="32" height="32"></a></div><nav class="header-nav"><a href="hapix.html#content">コンテンツ</a><a href="hapix.html#channel">チャンネル</a><a href="events.html" aria-current="page">イベント</a><a href="https://ginza-planning.com/%e3%81%8a%e5%95%8f%e3%81%84%e5%90%88%e3%82%8f%e3%81%9b/" target="_blank" rel="noopener">お問い合わせ</a></nav><button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="メニューを開く"><span class="menu-toggle-bar"></span></button></header>
 <div class="nav-backdrop" id="navBackdrop"></div>
 <nav class="mobile-nav" id="mobileNav" aria-label="モバイルメニュー">
   <a href="hapix.html#content">コンテンツ</a>
@@ -82,7 +82,19 @@
     <p>大家さん・不動産会社の経営者・受講生の皆さまが集まる場をつくっています。開催予定のイベントと、これまでの開催の様子をご紹介します。</p>
   </div>
 
-  <article class="block ev-card reveal">
+  <nav class="ev-jump" aria-label="イベントの区分">
+    <a href="#upcoming">開催予定 <span>1件</span></a>
+    <a href="#past">これまでのイベント <span>2件</span></a>
+  </nav>
+
+  <section class="ev-group" id="upcoming" aria-labelledby="upcoming-title">
+    <div class="section-head">
+      <p class="eyebrow">UPCOMING</p>
+      <h2 id="upcoming-title">開催予定のイベント</h2>
+      <p>これから開催するイベントです。お申し込み方法は、決まり次第このページと公式LINEでご案内します。</p>
+    </div>
+
+  <article class="block ev-card is-next reveal">
     <div class="ev-head">
       <p class="ev-badge">開催予定</p>
       <h3>ギンプラ感謝祭 2026</h3>
@@ -110,8 +122,18 @@
     </div>
   </article>
 
-  <article class="block ev-card reveal">
+  </section>
+
+  <section class="ev-group is-past" id="past" aria-labelledby="past-title">
+    <div class="section-head">
+      <p class="eyebrow">PAST</p>
+      <h2 id="past-title">これまでのイベント</h2>
+      <p>過去に開催したイベントです。新しい順に掲載しています。</p>
+    </div>
+
+  <article class="block ev-card is-past reveal">
     <div class="ev-head">
+      <p class="ev-badge done">開催終了</p>
       <h3>宮迫ゴルフコンペ<br>〜健康促進・予防医療〜</h3>
       <p class="ev-when">2026年6月10日（水）／金乃台カントリークラブ</p>
     </div>
@@ -149,8 +171,9 @@
     </div>
   </article>
 
-  <article class="block ev-card reveal">
+  <article class="block ev-card is-past reveal">
     <div class="ev-head">
+      <p class="ev-badge done">開催終了</p>
       <h3>ギンプラ感謝祭 2025</h3>
       <p class="ev-when">2025年開催</p>
     </div>
@@ -179,6 +202,8 @@
 
     </div>
   </article>
+
+  </section>
 
   <div class="section-cta reveal">
     <div class="cta-row">
