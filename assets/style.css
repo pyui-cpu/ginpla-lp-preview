@@ -212,13 +212,13 @@
 
     /* 開催予定／これまでのイベント のタブ切り替え */
     /* JSが動かないときはタブを出さず、2セクションを縦に並べたまま見せる（見出しも残す） */
-    .ev-tabs{display:flex;gap:8px;max-width:560px;margin:var(--sp-6) 2px var(--sp-5)}
-    .ev-tab{flex:1 1 0;display:inline-flex;align-items:baseline;justify-content:center;gap:6px;margin:0;padding:12px 14px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--sub);font-family:inherit;font-size:var(--fs-button);font-weight:700;line-height:1.4;white-space:nowrap;cursor:pointer;transition:background .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease}
-    .ev-tab span{font-size:var(--fs-micro);font-weight:700;opacity:.75}
+    .ev-tabs{display:flex;gap:8px;max-width:520px;margin:var(--sp-6) 2px var(--sp-5)}
+    /* 角の丸みはヒーローの「読む・見る」ボタンと同じ var(--radius)=4px に揃える */
+    .ev-tab{flex:1 1 0;display:inline-flex;align-items:center;justify-content:center;margin:0;padding:14px 20px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;color:var(--sub);font-family:inherit;font-size:var(--fs-button);font-weight:800;line-height:1.4;letter-spacing:.02em;white-space:nowrap;cursor:pointer;transition:background .2s ease,color .2s ease,border-color .2s ease}
     /* 開いているタブは塗りつぶし＋白文字。色だけでなく「塗り／枠線」の違いでも区別できるようにする */
-    .ev-tab[aria-selected="true"]{background:#c9105a;border-color:#c9105a;color:#fff;box-shadow:0 6px 16px -8px rgba(201,16,90,.9)}
-    .ev-tab[aria-selected="true"] span{opacity:.85}
-    .ev-tab:focus-visible{outline:2px solid var(--brand-blue);outline-offset:3px}
+    .ev-tab[aria-selected="true"]{background:#c9105a;border-color:#c9105a;color:#fff}
+    /* キーボード操作時のみ出る枠。青は使わず、白背景でもピンク背景でも見える濃色にする */
+    .ev-tab:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
     @media (hover:hover) and (pointer:fine){
       .ev-tab:not([aria-selected="true"]):hover{border-color:var(--brand-pink);color:var(--brand-pink)}
     }
