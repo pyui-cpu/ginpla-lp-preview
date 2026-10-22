@@ -144,12 +144,33 @@ footer .ask-wrap{margin-top:12px;max-width:640px}
 .contact .sec-en{color:rgba(255,255,255,.14)}
 .contact h2{color:#fff}
 .cbtn.form{background:#fff;color:var(--ink)}.cbtn.tel{background:var(--ink);color:#fff}
+
+/* === A：強さ。黒い帯・斜めの区切り・角ばった太枠 === */
+.hdr.scrolled{background:#111;box-shadow:none}.hdr.scrolled .brand,.hdr.scrolled nav{color:#fff}.hdr.scrolled .brand-txt b{color:#fff}
+.hdr.scrolled .act.tel{background:transparent;color:#fff;border-color:#fff}
+.sec-en{color:transparent;-webkit-text-stroke:1.5px #d9d9d4}
+.numbers{background:#111;color:#fff;clip-path:polygon(0 4vw,100% 0,100% 100%,0 100%);margin-top:-4vw;padding-top:calc(120px + 4vw)}
+.numbers .sec-head h2{color:#fff}.numbers .sec-en{-webkit-text-stroke-color:#3a3a3c}
+.numbers .n{background:transparent;border-top:6px solid #fff}.numbers .n:nth-child(1){border-top-color:var(--red)}
+.numbers .n b{color:#fff}.numbers .n p{color:#fff}.numbers .n .n-note,.numbers .cap{color:#a9a9ad}
+.numbers .logos div{border-radius:0;border:0}
+.flow{padding-top:140px}
+.wc,.csteps li{border-radius:0;border:3px solid var(--ink)}
+.wc h3{display:inline-block;background:var(--ink);color:#fff;padding:2px 10px}
+.tags li{border-radius:0;background:var(--ink);color:#fff}
+.fact{border-radius:0;background:var(--red)}.fact .btn-red{background:#111;border-radius:0}
+.consult{background:var(--soft);clip-path:polygon(0 0,100% 3vw,100% 100%,0 100%);padding-top:calc(120px + 3vw)}
+.csteps li{background:#fff}.csteps span{background:var(--red);color:#fff;padding:2px 10px}
+.bio{border-radius:0;border-left:6px solid var(--red)}
+.specs>div{border-bottom:2px solid var(--ink)}
+.props li{border-bottom:2px solid var(--line)}
+
 @media(max-width:860px){.hero{max-height:none;min-height:640px}.hero::before{background:linear-gradient(180deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,.8) 55%,rgba(255,255,255,.2) 100%)}
 .hero-in{justify-content:flex-start;padding-top:96px}.hero h1{font-size:50px}.badge{width:96px;height:96px;bottom:90px}.badge b{font-size:20px}.badge text{font-size:9px}.hbtn{width:100%;justify-content:space-between}.slash{top:84%}.slash.s2{top:87%}.note{top:auto;bottom:8px;right:8px}}
 @media(prefers-reduced-motion:reduce){.ch,.kick,.hero .sub,.hero .btns{opacity:1}.slash{transform:rotate(-14deg)}}
 </style></head>
 
-<body class="no-js"><header class="hdr "><div class="hwrap"><a class="brand" href="#top"><img src="assets/ginpla/ginpla-logo-black-128.webp" alt="ギンプラ ロゴ" width="38" height="38"><span class="brand-txt"><b>銀座プランニング</b><small>GINZA PLANNING / GINPLA</small></span></a>
+<body class="no-js"><header class="hdr "><div class="hwrap"><a class="brand" href="#top"><img src="assets/hapix/ginpla-logo-red-128.png" alt="ギンプラ ロゴ" width="38" height="38"><span class="brand-txt"><b>銀座プランニング</b><small>GINZA PLANNING / GINPLA</small></span></a>
 <nav><a href="#numbers">実績</a><a href="#flow">事業の流れ</a><a href="#wanted">求めている物件</a><a href="#message">代表挨拶</a><a href="#company">会社概要</a></nav>
 <div class="acts"><a class="act tel" href="tel:0366838202">☎ 03-6683-8202</a><a class="act line" href="https://page.line.me/199jpqpa?openQrModal=true" target="_blank" rel="noopener">LINEで相談</a><a class="act red" href="#contact">物件を相談する</a></div></div></header><main id="top"><section class="hero" aria-label="銀座プランニング">
   <video autoplay muted loop playsinline preload="metadata" poster="assets/ginpla/lp3/hero-poster.jpg" aria-hidden="true">
@@ -201,10 +222,11 @@ footer .ask-wrap{margin-top:12px;max-width:640px}
   if(rm||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')})}
   else{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('.count').forEach(count);io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});els.forEach(function(el){io.observe(el)})}
   function count(el){var to=+el.dataset.to,dec=+el.dataset.dec,t0=null;function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/1200,1);el.textContent=(to*(1-Math.pow(1-p,4))).toFixed(dec);if(p<1)requestAnimationFrame(f);else el.closest('b').classList.add('done')}requestAnimationFrame(f)}
+  var hd=document.querySelector('.hdr');function hdr(){if(hd)hd.classList.toggle('scrolled',window.scrollY>40)}window.addEventListener('scroll',hdr,{passive:true});hdr();
   if(rm){document.querySelectorAll('video[autoplay]').forEach(function(v){v.removeAttribute('autoplay');v.pause()});return}
   var par=[].slice.call(document.querySelectorAll('[data-speed]'));
   function onS(){var y=window.scrollY;par.forEach(function(p){p.style.transform='translate3d(0,'+(y*parseFloat(p.dataset.speed))+'px,0)'});
-    var h=document.querySelector('.hdr');if(h)h.classList.toggle('scrolled',y>40)}
+}
   window.addEventListener('scroll',onS,{passive:true});onS();
   if(window.GP_EXTRA)window.GP_EXTRA();
 })();
